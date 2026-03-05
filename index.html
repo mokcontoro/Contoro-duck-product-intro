@@ -21,19 +21,15 @@
     <a href="#hero"><span class="nav-num">&#9679;</span> Welcome</a>
     <a href="#module1" data-module="1"><span class="nav-num">1</span> Contoro at a Glance</a>
     <a href="#module2" data-module="2"><span class="nav-num">2</span> Duck System Architecture</a>
-    <a href="#quiz12" data-module="q12"><span class="nav-num">?</span> Quiz: Modules 1 &amp; 2</a>
     <a href="#module3" data-module="3"><span class="nav-num">3</span> Safety &amp; Risk Awareness</a>
-    <a href="#quiz3" data-module="q3"><span class="nav-num">?</span> Quiz: Module 3</a>
     <a href="#exercise1" class="exercise">&#9881; Live Exercise I</a>
     <a href="#module4" data-module="4"><span class="nav-num">4</span> Operation Modes</a>
-    <a href="#quiz4" data-module="q4"><span class="nav-num">?</span> Quiz: Module 4</a>
     <a href="#module5" data-module="5"><span class="nav-num">5</span> Setup &amp; Teardown</a>
     <a href="#exercise2" class="exercise">&#9881; Live Exercise II</a>
     <a href="#module6" data-module="6"><span class="nav-num">6</span> Cloud UI</a>
     <a href="#module7" data-module="7"><span class="nav-num">7</span> Operating the Duck</a>
-    <a href="#quiz567" data-module="q567"><span class="nav-num">?</span> Quiz: Modules 5–7</a>
     <a href="#exercise3" class="exercise">&#9881; Live Exercise III</a>
-    <a href="#completion">&#9733; Completion</a>
+    <a href="training.html" style="background:rgba(43,165,222,0.15);color:var(--blue);border-left-color:var(--blue);margin-top:8px;"><span class="nav-num" style="background:var(--blue);color:#fff;">&#9654;</span> Start Training</a>
   </nav>
   <div class="progress-bar">
     <label>Course Progress</label>
@@ -49,6 +45,7 @@
     <div class="hero-badge">Level I Certification</div>
     <h1>The <span>Duck</span> Camp</h1>
     <p>Training Program for Level I Duck Operators. Learn to safely and effectively operate the Contoro Dock Duck — our Autonomous Trailer Unloading Robot.</p>
+    <a href="training.html" class="hero-cta">Start Training &#8594;</a>
   </section>
 
   <!-- ══════════════════════════════════════════ -->
@@ -58,7 +55,6 @@
     <div class="module-header">
       <div class="module-number">1</div>
       <h2>Contoro at a Glance</h2>
-      <button class="complete-btn" data-module="1" onclick="toggleComplete(1)">Mark Complete</button>
     </div>
 
     <div class="content-grid">
@@ -135,7 +131,6 @@
     <div class="module-header">
       <div class="module-number">2</div>
       <h2>Duck System Architecture</h2>
-      <button class="complete-btn" data-module="2" onclick="toggleComplete(2)">Mark Complete</button>
     </div>
 
     <div class="content-grid">
@@ -230,60 +225,6 @@
     </div>
   </section>
 
-  <!-- ── QUIZ: MODULES 1 & 2 ── -->
-  <section class="module-section" id="quiz12">
-    <div class="module-header">
-      <div class="module-number" style="background:var(--blue);">?</div>
-      <h2>Knowledge Check — Modules 1 &amp; 2</h2>
-    </div>
-    <div class="quiz-section" data-quiz="quiz12">
-      <h3>Test your understanding of the Duck system</h3>
-
-      <div class="quiz-question" data-correct="1">
-        <p><span class="q-num">Q1.</span> Can we unload a box with dimensions: 4" x 20" x 15"?</p>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="q12_1" value="0"> Yes</label>
-          <label class="quiz-option"><input type="radio" name="q12_1" value="1"> No</label>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-
-      <div class="quiz-question" data-correct="1">
-        <p><span class="q-num">Q2.</span> What is the maximum box weight the Duck can handle?</p>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="q12_2" value="0"> 45 lb</label>
-          <label class="quiz-option"><input type="radio" name="q12_2" value="1"> 65 lb</label>
-          <label class="quiz-option"><input type="radio" name="q12_2" value="2"> 85 lb</label>
-          <label class="quiz-option"><input type="radio" name="q12_2" value="3"> 100 lb</label>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-
-      <div class="quiz-question" data-correct="2">
-        <p><span class="q-num">Q3.</span> Which type of container is OUT of scope for the Duck?</p>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="q12_3" value="0"> Floor-loaded trailer with cardboard boxes</label>
-          <label class="quiz-option"><input type="radio" name="q12_3" value="1"> Standard shipping container with stacked boxes</label>
-          <label class="quiz-option"><input type="radio" name="q12_3" value="2"> Palletized load</label>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-
-      <div class="quiz-question" data-correct="2">
-        <p><span class="q-num">Q4.</span> What is the correct order of box movement after the arm picks it up?</p>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="q12_4" value="0"> Flex Conveyor &rarr; Sloped Conveyor &rarr; Flat Conveyor</label>
-          <label class="quiz-option"><input type="radio" name="q12_4" value="1"> Sloped Conveyor &rarr; Flat Conveyor &rarr; Palletizer</label>
-          <label class="quiz-option"><input type="radio" name="q12_4" value="2"> Flat Conveyor &rarr; Sloped Conveyor &rarr; Flex Conveyor &rarr; Palletizer</label>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-
-      <button class="quiz-submit" onclick="gradeQuiz('quiz12')">Submit Answers</button>
-      <div class="quiz-result" id="result-quiz12"></div>
-    </div>
-  </section>
-
   <!-- ── CHECKPOINT ── -->
   <div class="checkpoint">
     <h3>Checkpoint</h3>
@@ -297,7 +238,6 @@
     <div class="module-header">
       <div class="module-number">3</div>
       <h2>Safety &amp; Risk Awareness</h2>
-      <button class="complete-btn" data-module="3" onclick="toggleComplete(3)">Mark Complete</button>
     </div>
 
     <div class="content-grid">
@@ -380,61 +320,6 @@
     </div>
   </section>
 
-  <!-- ── QUIZ: MODULE 3 ── -->
-  <section class="module-section" id="quiz3">
-    <div class="module-header">
-      <div class="module-number" style="background:var(--blue);">?</div>
-      <h2>Knowledge Check — Safety</h2>
-    </div>
-    <div class="quiz-section" data-quiz="quiz3">
-      <h3>Test your safety knowledge</h3>
-
-      <div class="quiz-question" data-correct="2">
-        <p><span class="q-num">Q1.</span> During unloading, the robot crashes into the wall. What is the first thing you would do?</p>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="q3_1" value="0"> Notify Contoro Staff</label>
-          <label class="quiz-option"><input type="radio" name="q3_1" value="1"> Inspect Gripper State</label>
-          <label class="quiz-option"><input type="radio" name="q3_1" value="2"> Press E-Stop</label>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-
-      <div class="quiz-question" data-correct="2">
-        <p><span class="q-num">Q2.</span> What does Red Mode indicate?</p>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="q3_2" value="0"> Robot is requesting reset</label>
-          <label class="quiz-option"><input type="radio" name="q3_2" value="1"> Robot is ready to unload</label>
-          <label class="quiz-option"><input type="radio" name="q3_2" value="2"> E-stop is engaged and safe to approach the robot</label>
-          <label class="quiz-option"><input type="radio" name="q3_2" value="3"> Robot is in manual mode</label>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-
-      <div class="quiz-question" data-correct="0">
-        <p><span class="q-num">Q3.</span> How many E-Stop buttons are there on the Duck system?</p>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="q3_3" value="0"> 6</label>
-          <label class="quiz-option"><input type="radio" name="q3_3" value="1"> 4</label>
-          <label class="quiz-option"><input type="radio" name="q3_3" value="2"> 2</label>
-          <label class="quiz-option"><input type="radio" name="q3_3" value="3"> 8</label>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-
-      <div class="quiz-question" data-correct="1">
-        <p><span class="q-num">Q4.</span> What voltage does the Duck system operate at?</p>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="q3_4" value="0"> 240V</label>
-          <label class="quiz-option"><input type="radio" name="q3_4" value="1"> 480V</label>
-          <label class="quiz-option"><input type="radio" name="q3_4" value="2"> 120V</label>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-
-      <button class="quiz-submit" onclick="gradeQuiz('quiz3')">Submit Answers</button>
-      <div class="quiz-result" id="result-quiz3"></div>
-    </div>
-  </section>
 
   <!-- ── LIVE EXERCISE I ── -->
   <section id="exercise1">
@@ -452,7 +337,6 @@
     <div class="module-header">
       <div class="module-number">4</div>
       <h2>Operation Modes &amp; Behaviors</h2>
-      <button class="complete-btn" data-module="4" onclick="toggleComplete(4)">Mark Complete</button>
     </div>
 
     <div class="content-grid">
@@ -517,52 +401,6 @@
     </div>
   </section>
 
-  <!-- ── QUIZ: MODULE 4 ── -->
-  <section class="module-section" id="quiz4">
-    <div class="module-header">
-      <div class="module-number" style="background:var(--blue);">?</div>
-      <h2>Knowledge Check — Operation Modes</h2>
-    </div>
-    <div class="quiz-section" data-quiz="quiz4">
-      <h3>Test your knowledge of robot states</h3>
-
-      <div class="quiz-question" data-correct="3">
-        <p><span class="q-num">Q1.</span> Manual driving is used to:</p>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="q4_1" value="0"> Change speed settings</label>
-          <label class="quiz-option"><input type="radio" name="q4_1" value="1"> Automatically unload boxes</label>
-          <label class="quiz-option"><input type="radio" name="q4_1" value="2"> Reset system faults</label>
-          <label class="quiz-option"><input type="radio" name="q4_1" value="3"> Move the Duck from storage to the container</label>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-
-      <div class="quiz-question" data-correct="1">
-        <p><span class="q-num">Q2.</span> In which mode is it safe to approach the robot?</p>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="q4_2" value="0"> Green Mode</label>
-          <label class="quiz-option"><input type="radio" name="q4_2" value="1"> Red Mode</label>
-          <label class="quiz-option"><input type="radio" name="q4_2" value="2"> Blue Mode</label>
-          <label class="quiz-option"><input type="radio" name="q4_2" value="3"> Yellow Mode</label>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-
-      <div class="quiz-question" data-correct="2">
-        <p><span class="q-num">Q3.</span> What does Green Mode mean?</p>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="q4_3" value="0"> E-Stop is engaged</label>
-          <label class="quiz-option"><input type="radio" name="q4_3" value="1"> Robot is in manual mode</label>
-          <label class="quiz-option"><input type="radio" name="q4_3" value="2"> Robot is ready/active — NOT safe to approach</label>
-          <label class="quiz-option"><input type="radio" name="q4_3" value="3"> Robot is requesting reset</label>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-
-      <button class="quiz-submit" onclick="gradeQuiz('quiz4')">Submit Answers</button>
-      <div class="quiz-result" id="result-quiz4"></div>
-    </div>
-  </section>
 
   <!-- ══════════════════════════════════════════ -->
   <!-- MODULE 5: SETUP & TEARDOWN                 -->
@@ -571,7 +409,6 @@
     <div class="module-header">
       <div class="module-number">5</div>
       <h2>Setup &amp; Teardown</h2>
-      <button class="complete-btn" data-module="5" onclick="toggleComplete(5)">Mark Complete</button>
     </div>
 
     <div class="content-grid">
@@ -652,7 +489,6 @@
     <div class="module-header">
       <div class="module-number">6</div>
       <h2>Operator User Interface (Cloud UI)</h2>
-      <button class="complete-btn" data-module="6" onclick="toggleComplete(6)">Mark Complete</button>
     </div>
 
     <div class="content-grid">
@@ -739,7 +575,6 @@
     <div class="module-header">
       <div class="module-number">7</div>
       <h2>Operating the Duck</h2>
-      <button class="complete-btn" data-module="7" onclick="toggleComplete(7)">Mark Complete</button>
     </div>
 
     <div class="content-grid">
@@ -812,71 +647,6 @@
     </div>
   </section>
 
-  <!-- ── QUIZ: MODULES 5-7 ── -->
-  <section class="module-section" id="quiz567">
-    <div class="module-header">
-      <div class="module-number" style="background:var(--blue);">?</div>
-      <h2>Knowledge Check — Modules 5–7</h2>
-    </div>
-    <div class="quiz-section" data-quiz="quiz567">
-      <h3>Test your operational knowledge</h3>
-
-      <div class="quiz-question" data-correct="1">
-        <p><span class="q-num">Q1.</span> What is the first component to set up before unloading?</p>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="q567_1" value="0"> Safety Fence</label>
-          <label class="quiz-option"><input type="radio" name="q567_1" value="1"> Safety Cart</label>
-          <label class="quiz-option"><input type="radio" name="q567_1" value="2"> Conveyors</label>
-          <label class="quiz-option"><input type="radio" name="q567_1" value="3"> Duck Robot</label>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-
-      <div class="quiz-question" data-correct="0">
-        <p><span class="q-num">Q2.</span> After assigning a container in the UI, how do you start the robot?</p>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="q567_2" value="0"> Click the Green Start Button on the Safety Cart</label>
-          <label class="quiz-option"><input type="radio" name="q567_2" value="1"> Press Start on the Xbox Controller</label>
-          <label class="quiz-option"><input type="radio" name="q567_2" value="2"> The robot starts automatically</label>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-
-      <div class="quiz-question" data-correct="2">
-        <p><span class="q-num">Q3.</span> When the robot enters Blue State during unloading, what should you do?</p>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="q567_3" value="0"> Press E-Stop</label>
-          <label class="quiz-option"><input type="radio" name="q567_3" value="1"> Restart the UI</label>
-          <label class="quiz-option"><input type="radio" name="q567_3" value="2"> Press the Reset button on the Safety Cart</label>
-          <label class="quiz-option"><input type="radio" name="q567_3" value="3"> Drive the robot out of the container</label>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-
-      <div class="quiz-question" data-correct="1">
-        <p><span class="q-num">Q4.</span> How does the robot know the container is fully unloaded?</p>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="q567_4" value="0"> The operator clicks "Complete" in the UI</label>
-          <label class="quiz-option"><input type="radio" name="q567_4" value="1"> The robot automatically detects no more boxes</label>
-          <label class="quiz-option"><input type="radio" name="q567_4" value="2"> A timer runs out</label>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-
-      <div class="quiz-question" data-correct="2">
-        <p><span class="q-num">Q5.</span> After pressing E-Stop due to an incident, what should you do next?</p>
-        <div class="quiz-options">
-          <label class="quiz-option"><input type="radio" name="q567_5" value="0"> Immediately reset the robot</label>
-          <label class="quiz-option"><input type="radio" name="q567_5" value="1"> Drive the robot to storage</label>
-          <label class="quiz-option"><input type="radio" name="q567_5" value="2"> Fill out the Incident Report form in the UI</label>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-
-      <button class="quiz-submit" onclick="gradeQuiz('quiz567')">Submit Answers</button>
-      <div class="quiz-result" id="result-quiz567"></div>
-    </div>
-  </section>
 
   <!-- ── LIVE EXERCISE III ── -->
   <section id="exercise3">

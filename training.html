@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training — Contoro Operator Training</title>
+  <link rel="stylesheet" href="css/training.css">
+  <link rel="icon" type="image/png" href="assets/images/contoro-logo.png">
+</head>
+<body>
+
+<div class="slide-viewport" id="slideViewport">
+
+  <!-- ═══════ SLIDE 1: Welcome ═══════ -->
+  <div class="slide slide-title" data-slide="1">
+    <div class="slide-inner">
+      <div class="module-badge">Level I Certification</div>
+      <h1>The <span>Duck</span> Camp</h1>
+      <p>Training Program for Level I Duck Operators</p>
+    </div>
+  </div>
+
+  <!-- ═══════ SLIDE 2: Training Plan ═══════ -->
+  <div class="slide slide-content" data-slide="2">
+    <div class="slide-inner">
+      <h2>Training Plan</h2>
+      <ol>
+        <li><strong>Module 1:</strong> Contoro at a Glance</li>
+        <li><strong>Module 2:</strong> Duck System Architecture</li>
+        <li><strong>Module 3:</strong> Safety &amp; Risk Awareness</li>
+        <li><strong>Module 4:</strong> Operation Modes &amp; Behaviors</li>
+        <li><strong>Module 5:</strong> Setup &amp; Teardown</li>
+        <li><strong>Module 6:</strong> Cloud UI</li>
+        <li><strong>Module 7:</strong> Operating the Duck</li>
+      </ol>
+      <p style="margin-top:16px;">Plus <strong>3 live exercises</strong> and <strong>4 knowledge check quizzes</strong> (80% to pass).</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════ -->
+  <!-- MODULE 1: CONTORO AT A GLANCE      -->
+  <!-- ═══════════════════════════════════ -->
+
+  <div class="slide slide-title" data-slide="3" data-module="1">
+    <div class="slide-inner">
+      <div class="module-badge">Module 1</div>
+      <h1>Contoro at a Glance</h1>
+    </div>
+  </div>
+
+  <div class="slide slide-content" data-slide="4">
+    <div class="slide-inner">
+      <h2>Our Technology</h2>
+      <p>This is our <strong>Autonomous Trailer Unloading Robot</strong> — also known as the <strong>Dock Duck</strong>. It automates one of the most physically demanding tasks in warehouse logistics.</p>
+      <img src="assets/images/duck-robot.jpg" alt="The Dock Duck robot">
+    </div>
+  </div>
+
+  <div class="slide slide-content" data-slide="5">
+    <div class="slide-inner">
+      <h2>What Do We Do?</h2>
+      <p>We automate offloading floor-loaded trailers. The Duck enters the container, picks up boxes one at a time, and places them onto the conveyor system for palletization.</p>
+      <div class="two-col">
+        <img src="assets/images/duck-picking-box.jpg" alt="Duck picking up a box">
+        <img src="assets/images/duck-unloading.jpg" alt="Duck unloading boxes">
+      </div>
+    </div>
+  </div>
+
+  <div class="slide slide-content" data-slide="6">
+    <div class="slide-inner">
+      <h2>Why This Matters</h2>
+      <div class="two-col">
+        <div>
+          <p><strong>Reduces injury risk</strong> for associates and allows them to work on safer tasks.</p>
+          <img src="assets/images/worker-lifting.jpg" alt="Worker lifting heavy box">
+        </div>
+        <div>
+          <p><strong>Keeps associates inside</strong> the warehouse and out of extremely hot or cold containers.</p>
+          <img src="assets/images/hot-cold-containers.jpg" alt="Hot and cold containers">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide slide-video" data-slide="7">
+    <div class="slide-inner">
+      <h2>What Does Automated Trailer Unloading Look Like?</h2>
+      <video controls preload="metadata">
+        <source src="assets/videos/overview.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <div class="slide slide-content" data-slide="8">
+    <div class="slide-inner">
+      <h2>Operating Limits</h2>
+      <img src="assets/images/operating-limits.jpg" alt="Operating limits" class="img-center img-small">
+      <table class="spec-table">
+        <tr><th>Parameter</th><th>Specification</th></tr>
+        <tr><td>Box Size (each side)</td><td>8 in — 30 in</td></tr>
+        <tr><td>Box Weight</td><td>&le; 65 lb</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="slide slide-content" data-slide="9">
+    <div class="slide-inner">
+      <h2>Trailers &amp; Containers</h2>
+      <p><strong>In Scope:</strong> Floor-loaded trailers with standard cardboard boxes.</p>
+      <p><strong>Out of Scope:</strong> Palletized loads, covered sheets, boxes under 8".</p>
+      <div class="two-col">
+        <div style="text-align:center">
+          <p style="font-weight:700;color:var(--red);">Out of Scope</p>
+          <img src="assets/images/out-of-scope.png" alt="Out of scope">
+        </div>
+        <div style="text-align:center">
+          <p style="font-weight:700;color:var(--green);">In Scope</p>
+          <img src="assets/images/in-scope.png" alt="In scope">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════ -->
+  <!-- MODULE 2: DUCK SYSTEM ARCHITECTURE  -->
+  <!-- ═══════════════════════════════════ -->
+
+  <div class="slide slide-title" data-slide="10" data-module="2">
+    <div class="slide-inner">
+      <div class="module-badge">Module 2</div>
+      <h1>Duck System Architecture</h1>
+    </div>
+  </div>
+
+  <div class="slide slide-content" data-slide="11">
+    <div class="slide-inner">
+      <h2>System Components Overview</h2>
+      <p>The Duck system consists of the robot, safety fence, safety cart, conveyors, ramp, and the container at the dock.</p>
+      <img src="assets/images/system-architecture.png" alt="System architecture">
+    </div>
+  </div>
+
+  <div class="slide slide-content" data-slide="12">
+    <div class="slide-inner">
+      <h2>Key Components</h2>
+      <div class="two-col">
+        <div>
+          <h3 style="color:var(--navy);margin-bottom:8px;">Duck / Unloading Robot</h3>
+          <p>KUKA robotic arm, gripper, conveyors, and drive system on a mobile platform.</p>
+          <img src="assets/images/dock-layout.png" alt="Duck at dock">
+        </div>
+        <div>
+          <h3 style="color:var(--navy);margin-bottom:8px;">Safety Fence &amp; Cart</h3>
+          <p>Interlock fence prevents unauthorized access. Safety cart is the operator station.</p>
+          <img src="assets/images/safety-fence.png" alt="Safety fence">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide slide-content" data-slide="13">
+    <div class="slide-inner">
+      <h2>Real-Life Unloading Scene</h2>
+      <p>The full system at a warehouse dock — Duck, conveyors, safety cart, and palletizer.</p>
+      <img src="assets/images/real-life-scene.jpg" alt="Real life scene">
+    </div>
+  </div>
+
+  <div class="slide slide-video" data-slide="14">
+    <div class="slide-inner">
+      <h2>Real-Life Unloading</h2>
+      <video controls preload="metadata">
+        <source src="assets/videos/real-life-unloading.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <div class="slide slide-content" data-slide="15">
+    <div class="slide-inner">
+      <h2>How Does the Box Move from Arm to Pallet?</h2>
+      <div class="step"><div class="step-num">1</div><div><h4>Flat Conveyor</h4><p>Box lands on the flat conveyor built into the Duck</p></div></div>
+      <div class="step"><div class="step-num">2</div><div><h4>Sloped Conveyor</h4><p>Box moves to the sloped (powered) conveyor</p></div></div>
+      <div class="step"><div class="step-num">3</div><div><h4>Flex Conveyor</h4><p>Box moves to the flex conveyor to finally get palletized</p></div></div>
+    </div>
+  </div>
+
+  <div class="slide slide-video" data-slide="16">
+    <div class="slide-inner">
+      <h2>Box Conveyor Path</h2>
+      <video controls preload="metadata">
+        <source src="assets/videos/box-conveyor-path.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <div class="slide slide-content" data-slide="17">
+    <div class="slide-inner">
+      <h2>Gripper &amp; KUKA Arm</h2>
+      <div class="two-col">
+        <div>
+          <h3 style="color:var(--navy);margin-bottom:8px;">Gripper / End Effector</h3>
+          <p>Uses suction cups to pick boxes from the container wall. Adapts to different sizes and positions.</p>
+        </div>
+        <div>
+          <h3 style="color:var(--navy);margin-bottom:8px;">KUKA Robotic Arm</h3>
+          <p>Industrial robotic arm provides reach and force to grab boxes anywhere inside the container.</p>
+          <img src="assets/images/kuka-arm.png" alt="KUKA arm">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide slide-video" data-slide="18">
+    <div class="slide-inner">
+      <h2>Gripper in Action</h2>
+      <video controls preload="metadata">
+        <source src="assets/videos/gripper.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <!-- ═══════ QUIZ: MODULES 1 & 2 ═══════ -->
+
+  <div class="slide slide-quiz" data-slide="19" data-quiz="quiz12" data-q="0" data-correct="1">
+    <div class="slide-inner">
+      <div class="quiz-label">Quiz — Modules 1 &amp; 2</div>
+      <h2>Can we unload a box with dimensions: 4" x 20" x 15"?</h2>
+      <div class="quiz-options">
+        <label class="quiz-opt"><input type="radio" name="s19" value="0"> Yes</label>
+        <label class="quiz-opt"><input type="radio" name="s19" value="1"> No</label>
+      </div>
+      <button class="quiz-check-btn" disabled onclick="checkQuizSlide(19)">Check Answer</button>
+      <div class="quiz-feedback-msg"></div>
+    </div>
+  </div>
+
+  <div class="slide slide-quiz" data-slide="20" data-quiz="quiz12" data-q="1" data-correct="1">
+    <div class="slide-inner">
+      <div class="quiz-label">Quiz — Modules 1 &amp; 2</div>
+      <h2>What is the maximum box weight the Duck can handle?</h2>
+      <div class="quiz-options">
+        <label class="quiz-opt"><input type="radio" name="s20" value="0"> 45 lb</label>
+        <label class="quiz-opt"><input type="radio" name="s20" value="1"> 65 lb</label>
+        <label class="quiz-opt"><input type="radio" name="s20" value="2"> 85 lb</label>
+        <label class="quiz-opt"><input type="radio" name="s20" value="3"> 100 lb</label>
+      </div>
+      <button class="quiz-check-btn" disabled onclick="checkQuizSlide(20)">Check Answer</button>
+      <div class="quiz-feedback-msg"></div>
+    </div>
+  </div>
+
+  <div class="slide slide-quiz" data-slide="21" data-quiz="quiz12" data-q="2" data-correct="2">
+    <div class="slide-inner">
+      <div class="quiz-label">Quiz — Modules 1 &amp; 2</div>
+      <h2>Which type of container is OUT of scope for the Duck?</h2>
+      <div class="quiz-options">
+        <label class="quiz-opt"><input type="radio" name="s21" value="0"> Floor-loaded trailer with cardboard boxes</label>
+        <label class="quiz-opt"><input type="radio" name="s21" value="1"> Standard shipping container with stacked boxes</label>
+        <label class="quiz-opt"><input type="radio" name="s21" value="2"> Palletized load</label>
+      </div>
+      <button class="quiz-check-btn" disabled onclick="checkQuizSlide(21)">Check Answer</button>
+      <div class="quiz-feedback-msg"></div>
+    </div>
+  </div>
+
+  <div class="slide slide-quiz" data-slide="22" data-quiz="quiz12" data-q="3" data-correct="2">
+    <div class="slide-inner">
+      <div class="quiz-label">Quiz — Modules 1 &amp; 2</div>
+      <h2>What is the correct order of box movement?</h2>
+      <div class="quiz-options">
+        <label class="quiz-opt"><input type="radio" name="s22" value="0"> Flex Conveyor &rarr; Sloped Conveyor &rarr; Flat Conveyor</label>
+        <label class="quiz-opt"><input type="radio" name="s22" value="1"> Sloped Conveyor &rarr; Flat Conveyor &rarr; Palletizer</label>
+        <label class="quiz-opt"><input type="radio" name="s22" value="2"> Flat Conveyor &rarr; Sloped Conveyor &rarr; Flex Conveyor &rarr; Palletizer</label>
+      </div>
+      <button class="quiz-check-btn" disabled onclick="checkQuizSlide(22)">Check Answer</button>
+      <div class="quiz-feedback-msg"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════ -->
+  <!-- MODULE 3: SAFETY & RISK AWARENESS   -->
+  <!-- ═══════════════════════════════════ -->
+
+  <div class="slide slide-title" data-slide="23" data-module="3">
+    <div class="slide-inner">
+      <div class="module-badge">Module 3</div>
+      <h1>Safety &amp; Risk Awareness</h1>
+    </div>
+  </div>
+
+  <div class="slide slide-safety" data-slide="24">
+    <div class="slide-inner">
+      <h2>Why Safety Matters</h2>
+      <p>The Duck system includes powerful industrial equipment. Key safety concerns:</p>
+      <ol>
+        <li><strong>High Voltage</strong> — The system operates at 480V which can be fatal</li>
+        <li><strong>Heavy Moving Parts</strong> — Conveyors and drive mechanisms can cause crush injuries</li>
+        <li><strong>Powerful Robotic Arm</strong> — The KUKA arm can move suddenly with great force</li>
+      </ol>
+      <img src="assets/images/safety-first.png" alt="Safety First" class="img-center" style="max-width:250px;">
+    </div>
+  </div>
+
+  <div class="slide slide-safety" data-slide="25">
+    <div class="slide-inner">
+      <h2>Things to Pay Attention To</h2>
+      <ol>
+        <li><strong>Status Indicator Light</strong> — Always check the light color before approaching</li>
+        <li><strong>KUKA Robotic Arm</strong> — Can move suddenly with force</li>
+        <li><strong>High Voltage</strong> — Never open electrical panels</li>
+        <li><strong>Warehouse Machinery</strong> — Be aware of forklifts and other equipment</li>
+        <li><strong>Robot Emergency Stops</strong> — Know where all 6 E-stops are located</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="slide slide-video" data-slide="26">
+    <div class="slide-inner">
+      <h2>The Status Indicator Light</h2>
+      <video controls preload="metadata">
+        <source src="assets/videos/status-light.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <div class="slide slide-safety" data-slide="27">
+    <div class="slide-inner">
+      <h2>KUKA Arm &amp; High Voltage</h2>
+      <div class="two-col">
+        <div>
+          <p><strong>KUKA Robotic Arm:</strong></p>
+          <ul>
+            <li>Can move suddenly with force</li>
+            <li>Standing next to a live robot = impact risk</li>
+            <li>Collision can cause serious injury</li>
+          </ul>
+          <img src="assets/images/kuka-arm-detail.png" alt="KUKA arm" class="img-center">
+        </div>
+        <div>
+          <p><strong>High Voltage (480V):</strong></p>
+          <ul>
+            <li>Can be fatal</li>
+            <li>Do not open panels</li>
+            <li>Do not touch exposed wires</li>
+            <li>Escalate immediately</li>
+          </ul>
+          <img src="assets/images/high-voltage-sign.png" alt="High voltage" class="img-center">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide slide-safety" data-slide="28">
+    <div class="slide-inner">
+      <h2>The 6 E-Stops</h2>
+      <p>Know where all 6 emergency stop buttons are. In an emergency, press the nearest one immediately.</p>
+      <img src="assets/images/estop-locations.png" alt="E-stop locations" class="img-center">
+    </div>
+  </div>
+
+  <div class="slide slide-safety" data-slide="29">
+    <div class="slide-inner">
+      <h2>Container Unloading Situations</h2>
+      <ol>
+        <li><strong>Robot Arm crashes into wall</strong> — Press E-Stop immediately</li>
+        <li><strong>Robot stops / Gets stuck</strong> — Report via UI, contact Contoro staff</li>
+        <li><strong>Someone entering the container</strong> — Press E-Stop immediately</li>
+        <li><strong>Unexpected movement</strong> — Press E-Stop immediately</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- ═══════ QUIZ: MODULE 3 ═══════ -->
+
+  <div class="slide slide-quiz" data-slide="30" data-quiz="quiz3" data-q="0" data-correct="2">
+    <div class="slide-inner">
+      <div class="quiz-label">Quiz — Safety</div>
+      <h2>During unloading, the robot crashes into the wall. What is the first thing you would do?</h2>
+      <div class="quiz-options">
+        <label class="quiz-opt"><input type="radio" name="s30" value="0"> Notify Contoro Staff</label>
+        <label class="quiz-opt"><input type="radio" name="s30" value="1"> Inspect Gripper State</label>
+        <label class="quiz-opt"><input type="radio" name="s30" value="2"> Press E-Stop</label>
+      </div>
+      <button class="quiz-check-btn" disabled onclick="checkQuizSlide(30)">Check Answer</button>
+      <div class="quiz-feedback-msg"></div>
+    </div>
+  </div>
+
+  <div class="slide slide-quiz" data-slide="31" data-quiz="quiz3" data-q="1" data-correct="2">
+    <div class="slide-inner">
+      <div class="quiz-label">Quiz — Safety</div>
+      <h2>What does Red Mode indicate?</h2>
+      <div class="quiz-options">
+        <label class="quiz-opt"><input type="radio" name="s31" value="0"> Robot is requesting reset</label>
+        <label class="quiz-opt"><input type="radio" name="s31" value="1"> Robot is ready to unload</label>
+        <label class="quiz-opt"><input type="radio" name="s31" value="2"> E-stop is engaged and safe to approach</label>
+        <label class="quiz-opt"><input type="radio" name="s31" value="3"> Robot is in manual mode</label>
+      </div>
+      <button class="quiz-check-btn" disabled onclick="checkQuizSlide(31)">Check Answer</button>
+      <div class="quiz-feedback-msg"></div>
+    </div>
+  </div>
+
+  <div class="slide slide-quiz" data-slide="32" data-quiz="quiz3" data-q="2" data-correct="0">
+    <div class="slide-inner">
+      <div class="quiz-label">Quiz — Safety</div>
+      <h2>How many E-Stop buttons are there on the Duck system?</h2>
+      <div class="quiz-options">
+        <label class="quiz-opt"><input type="radio" name="s32" value="0"> 6</label>
+        <label class="quiz-opt"><input type="radio" name="s32" value="1"> 4</label>
+        <label class="quiz-opt"><input type="radio" name="s32" value="2"> 2</label>
+        <label class="quiz-opt"><input type="radio" name="s32" value="3"> 8</label>
+      </div>
+      <button class="quiz-check-btn" disabled onclick="checkQuizSlide(32)">Check Answer</button>
+      <div class="quiz-feedback-msg"></div>
+    </div>
+  </div>
+
+  <div class="slide slide-quiz" data-slide="33" data-quiz="quiz3" data-q="3" data-correct="1">
+    <div class="slide-inner">
+      <div class="quiz-label">Quiz — Safety</div>
+      <h2>What voltage does the Duck system operate at?</h2>
+      <div class="quiz-options">
+        <label class="quiz-opt"><input type="radio" name="s33" value="0"> 240V</label>
+        <label class="quiz-opt"><input type="radio" name="s33" value="1"> 480V</label>
+        <label class="quiz-opt"><input type="radio" name="s33" value="2"> 120V</label>
+      </div>
+      <button class="quiz-check-btn" disabled onclick="checkQuizSlide(33)">Check Answer</button>
+      <div class="quiz-feedback-msg"></div>
+    </div>
+  </div>
+
+  <!-- ═══════ LIVE EXERCISE I ═══════ -->
+
+  <div class="slide slide-exercise" data-slide="34">
+    <div class="slide-inner">
+      <div class="exercise-icon">&#9881;</div>
+      <h2>Live Exercise I: Meet the Duck!</h2>
+      <p>Your instructor will walk you through the physical Duck system, point out all safety features, E-stops, and components you've learned about.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════ -->
+  <!-- MODULE 4: OPERATION MODES           -->
+  <!-- ═══════════════════════════════════ -->
+
+  <div class="slide slide-title" data-slide="35" data-module="4">
+    <div class="slide-inner">
+      <div class="module-badge">Module 4</div>
+      <h1>Operation Modes &amp; Behaviors</h1>
+    </div>
+  </div>
+
+  <div class="slide slide-content" data-slide="36">
+    <div class="slide-inner">
+      <h2>Robot Status Modes</h2>
+      <p>The Duck has four states, indicated by the Status Indicator Light:</p>
+      <div class="status-grid">
+        <div class="status-card status-red"><h3>Red = E-Stop</h3><ul><li>Robot cannot move</li><li>Safe to approach</li><li>E-Stop engaged</li></ul></div>
+        <div class="status-card status-blue"><h3>Blue = Reset</h3><ul><li>Requesting reset</li><li>Cannot move</li><li>Press reset to change state</li></ul></div>
+        <div class="status-card status-yellow"><h3>Yellow = Manual</h3><ul><li>Drivable with Xbox Controller</li><li>Arm can be moved manually</li><li>Safety Cart cannot control</li></ul></div>
+        <div class="status-card status-green"><h3>Green = Ready/Active</h3><ul><li>NOT safe to approach</li><li>Arm can move</li><li>Ready to unload</li></ul></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide slide-content" data-slide="37">
+    <div class="slide-inner">
+      <h2>Manual Driving</h2>
+      <p>In Yellow (Manual) mode, drive the Duck with an Xbox Controller. Used to move the Duck from storage to the container and back.</p>
+      <img src="assets/images/xbox-controller.png" alt="Xbox controller" class="img-center img-small">
+    </div>
+  </div>
+
+  <div class="slide slide-video" data-slide="38">
+    <div class="slide-inner">
+      <h2>Manual Driving Demo</h2>
+      <video controls preload="metadata">
+        <source src="assets/videos/manual-driving.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <!-- ═══════ QUIZ: MODULE 4 ═══════ -->
+
+  <div class="slide slide-quiz" data-slide="39" data-quiz="quiz4" data-q="0" data-correct="3">
+    <div class="slide-inner">
+      <div class="quiz-label">Quiz — Operation Modes</div>
+      <h2>Manual driving is used to:</h2>
+      <div class="quiz-options">
+        <label class="quiz-opt"><input type="radio" name="s39" value="0"> Change speed settings</label>
+        <label class="quiz-opt"><input type="radio" name="s39" value="1"> Automatically unload boxes</label>
+        <label class="quiz-opt"><input type="radio" name="s39" value="2"> Reset system faults</label>
+        <label class="quiz-opt"><input type="radio" name="s39" value="3"> Move the Duck from storage to the container</label>
+      </div>
+      <button class="quiz-check-btn" disabled onclick="checkQuizSlide(39)">Check Answer</button>
+      <div class="quiz-feedback-msg"></div>
+    </div>
+  </div>
+
+  <div class="slide slide-quiz" data-slide="40" data-quiz="quiz4" data-q="1" data-correct="1">
+    <div class="slide-inner">
+      <div class="quiz-label">Quiz — Operation Modes</div>
+      <h2>In which mode is it safe to approach the robot?</h2>
+      <div class="quiz-options">
+        <label class="quiz-opt"><input type="radio" name="s40" value="0"> Green Mode</label>
+        <label class="quiz-opt"><input type="radio" name="s40" value="1"> Red Mode</label>
+        <label class="quiz-opt"><input type="radio" name="s40" value="2"> Blue Mode</label>
+        <label class="quiz-opt"><input type="radio" name="s40" value="3"> Yellow Mode</label>
+      </div>
+      <button class="quiz-check-btn" disabled onclick="checkQuizSlide(40)">Check Answer</button>
+      <div class="quiz-feedback-msg"></div>
+    </div>
+  </div>
+
+  <div class="slide slide-quiz" data-slide="41" data-quiz="quiz4" data-q="2" data-correct="2">
+    <div class="slide-inner">
+      <div class="quiz-label">Quiz — Operation Modes</div>
+      <h2>What does Green Mode mean?</h2>
+      <div class="quiz-options">
+        <label class="quiz-opt"><input type="radio" name="s41" value="0"> E-Stop is engaged</label>
+        <label class="quiz-opt"><input type="radio" name="s41" value="1"> Robot is in manual mode</label>
+        <label class="quiz-opt"><input type="radio" name="s41" value="2"> Robot is ready/active — NOT safe to approach</label>
+        <label class="quiz-opt"><input type="radio" name="s41" value="3"> Robot is requesting reset</label>
+      </div>
+      <button class="quiz-check-btn" disabled onclick="checkQuizSlide(41)">Check Answer</button>
+      <div class="quiz-feedback-msg"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════ -->
+  <!-- MODULE 5: SETUP & TEARDOWN          -->
+  <!-- ═══════════════════════════════════ -->
+
+  <div class="slide slide-title" data-slide="42" data-module="5">
+    <div class="slide-inner">
+      <div class="module-badge">Module 5</div>
+      <h1>Setup &amp; Teardown</h1>
+    </div>
+  </div>
+
+  <div class="slide slide-content" data-slide="43">
+    <div class="slide-inner">
+      <h2>Setup Procedure</h2>
+      <div class="step"><div class="step-num">1</div><div><h4>Safety Cart</h4><p>Position at the designated operator station</p></div></div>
+      <div class="step"><div class="step-num">2</div><div><h4>Robot / Duck</h4><p>Drive to container opening using Xbox controller (Yellow mode)</p></div></div>
+      <div class="step"><div class="step-num">3</div><div><h4>Conveyors</h4><p>Connect powered and flex conveyors to palletization area</p></div></div>
+      <div class="step"><div class="step-num">4</div><div><h4>Safety Fence</h4><p>Deploy fence and ensure all interlocks engaged</p></div></div>
+    </div>
+  </div>
+
+  <div class="slide slide-video" data-slide="44">
+    <div class="slide-inner">
+      <h2>Setup Demo</h2>
+      <video controls preload="metadata">
+        <source src="assets/videos/setup.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <div class="slide slide-content" data-slide="45">
+    <div class="slide-inner">
+      <h2>Teardown Procedure</h2>
+      <p>After unloading is complete, tear down in reverse order:</p>
+      <div class="step"><div class="step-num">1</div><div><h4>Safety Fence</h4><p>Retract and stow</p></div></div>
+      <div class="step"><div class="step-num">2</div><div><h4>Conveyors</h4><p>Disconnect and collapse</p></div></div>
+      <div class="step"><div class="step-num">3</div><div><h4>Robot / Duck</h4><p>Drive back to storage (Yellow mode)</p></div></div>
+      <div class="step"><div class="step-num">4</div><div><h4>Safety Cart</h4><p>Return to storage position</p></div></div>
+    </div>
+  </div>
+
+  <!-- ═══════ LIVE EXERCISE II ═══════ -->
+
+  <div class="slide slide-exercise" data-slide="46">
+    <div class="slide-inner">
+      <div class="exercise-icon">&#9881;</div>
+      <h2>Live Exercise II: Practice Setup &amp; Teardown!</h2>
+      <p>Practice the full setup and teardown procedure with your instructor. Position all components and verify safety interlocks.</p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════ -->
+  <!-- MODULE 6: CLOUD UI                  -->
+  <!-- ═══════════════════════════════════ -->
+
+  <div class="slide slide-title" data-slide="47" data-module="6">
+    <div class="slide-inner">
+      <div class="module-badge">Module 6</div>
+      <h1>Cloud UI</h1>
+      <p>Operator User Interface</p>
+    </div>
+  </div>
+
+  <div class="slide slide-content" data-slide="48">
+    <div class="slide-inner">
+      <h2>UI Overview</h2>
+      <p>The Cloud UI runs in a browser on the Safety Cart laptop. It's your primary interface for monitoring and controlling the Duck.</p>
+      <img src="assets/images/ui-controls.png" alt="Cloud UI">
+    </div>
+  </div>
+
+  <div class="slide slide-content" data-slide="49">
+    <div class="slide-inner">
+      <h2>UI Tabs</h2>
+      <table class="spec-table">
+        <tr><th>Tab</th><th>Purpose</th></tr>
+        <tr><td><strong>Controls</strong></td><td>Robot speed, drop-off height, start/pause unloading</td></tr>
+        <tr><td><strong>Health</strong></td><td>Hardware, software, sensors, arm messages</td></tr>
+        <tr><td><strong>Portal</strong></td><td>3D visualization of robot and container</td></tr>
+        <tr><td><strong>Incidents</strong></td><td>Report and review incidents</td></tr>
+        <tr><td><strong>Maintenance</strong></td><td>System maintenance info</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="slide slide-content" data-slide="50">
+    <div class="slide-inner">
+      <h2>Health &amp; Portal Tabs</h2>
+      <div class="two-col">
+        <div>
+          <p><strong>Health:</strong> CPU, GPU, memory, sensors, software versions, robot arm messages.</p>
+          <img src="assets/images/ui-health.png" alt="Health tab">
+        </div>
+        <div>
+          <p><strong>Portal:</strong> 3D view of robot position and container.</p>
+          <img src="assets/images/ui-portal.png" alt="Portal tab">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide slide-content" data-slide="51">
+    <div class="slide-inner">
+      <h2>Incident Reporting</h2>
+      <div class="step"><div class="step-num">1</div><div><h4>Choose Tag</h4><p>Select the type of incident or event</p></div></div>
+      <div class="step"><div class="step-num">2</div><div><h4>Add Notes</h4><p>Write a few notes describing the event</p></div></div>
+      <div class="step"><div class="step-num">3</div><div><h4>Click Report</h4><p>Submit the incident report</p></div></div>
+      <img src="assets/images/ui-incident-report.png" alt="Incident report" class="img-center">
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════ -->
+  <!-- MODULE 7: OPERATING THE DUCK        -->
+  <!-- ═══════════════════════════════════ -->
+
+  <div class="slide slide-title" data-slide="52" data-module="7">
+    <div class="slide-inner">
+      <div class="module-badge">Module 7</div>
+      <h1>Operating the Duck</h1>
+    </div>
+  </div>
+
+  <div class="slide slide-content" data-slide="53">
+    <div class="slide-inner">
+      <h2>Full Operation Workflow</h2>
+      <div class="step"><div class="step-num">I</div><div><h4>Setup</h4><p>Position cart, drive Duck to container, set up conveyors, deploy fence</p></div></div>
+      <div class="step"><div class="step-num">II</div><div><h4>Assign Container</h4><p>Choose Facility and Container ID in the UI</p></div></div>
+      <div class="step"><div class="step-num">III</div><div><h4>Start Robot</h4><p>Click Green Start Button on the Safety Cart</p></div></div>
+      <div class="step"><div class="step-num">IV</div><div><h4>Monitor &amp; Respond</h4><p>Pause from UI, Reset from Safety Cart if Blue, E-Stop for emergencies</p></div></div>
+      <div class="step"><div class="step-num">V</div><div><h4>Unloading Finished</h4><p>Robot auto-detects empty container and stops</p></div></div>
+      <div class="step"><div class="step-num">VI</div><div><h4>Teardown</h4><p>Reverse setup: fence, conveyors, Duck to storage, cart</p></div></div>
+    </div>
+  </div>
+
+  <div class="slide slide-safety" data-slide="54">
+    <div class="slide-inner">
+      <h2>When to Press E-Stop During Unloading</h2>
+      <ol>
+        <li><strong>Crash</strong> — Robot arm hits container wall or structure</li>
+        <li><strong>Incident</strong> — Any unexpected behavior or malfunction</li>
+        <li><strong>Entering the container</strong> — Anyone enters while robot is active</li>
+      </ol>
+      <p style="margin-top:20px;"><strong>After E-Stop:</strong> Fill out the Incident Report form in the UI (choose tag, add notes, click Report).</p>
+    </div>
+  </div>
+
+  <!-- ═══════ QUIZ: MODULES 5-7 ═══════ -->
+
+  <div class="slide slide-quiz" data-slide="55" data-quiz="quiz567" data-q="0" data-correct="1">
+    <div class="slide-inner">
+      <div class="quiz-label">Quiz — Modules 5–7</div>
+      <h2>What is the first component to set up before unloading?</h2>
+      <div class="quiz-options">
+        <label class="quiz-opt"><input type="radio" name="s55" value="0"> Safety Fence</label>
+        <label class="quiz-opt"><input type="radio" name="s55" value="1"> Safety Cart</label>
+        <label class="quiz-opt"><input type="radio" name="s55" value="2"> Conveyors</label>
+        <label class="quiz-opt"><input type="radio" name="s55" value="3"> Duck Robot</label>
+      </div>
+      <button class="quiz-check-btn" disabled onclick="checkQuizSlide(55)">Check Answer</button>
+      <div class="quiz-feedback-msg"></div>
+    </div>
+  </div>
+
+  <div class="slide slide-quiz" data-slide="56" data-quiz="quiz567" data-q="1" data-correct="0">
+    <div class="slide-inner">
+      <div class="quiz-label">Quiz — Modules 5–7</div>
+      <h2>How do you start the robot after assigning a container?</h2>
+      <div class="quiz-options">
+        <label class="quiz-opt"><input type="radio" name="s56" value="0"> Click Green Start Button on Safety Cart</label>
+        <label class="quiz-opt"><input type="radio" name="s56" value="1"> Press Start on Xbox Controller</label>
+        <label class="quiz-opt"><input type="radio" name="s56" value="2"> The robot starts automatically</label>
+      </div>
+      <button class="quiz-check-btn" disabled onclick="checkQuizSlide(56)">Check Answer</button>
+      <div class="quiz-feedback-msg"></div>
+    </div>
+  </div>
+
+  <div class="slide slide-quiz" data-slide="57" data-quiz="quiz567" data-q="2" data-correct="2">
+    <div class="slide-inner">
+      <div class="quiz-label">Quiz — Modules 5–7</div>
+      <h2>When the robot enters Blue State, what should you do?</h2>
+      <div class="quiz-options">
+        <label class="quiz-opt"><input type="radio" name="s57" value="0"> Press E-Stop</label>
+        <label class="quiz-opt"><input type="radio" name="s57" value="1"> Restart the UI</label>
+        <label class="quiz-opt"><input type="radio" name="s57" value="2"> Press Reset on the Safety Cart</label>
+        <label class="quiz-opt"><input type="radio" name="s57" value="3"> Drive the robot out</label>
+      </div>
+      <button class="quiz-check-btn" disabled onclick="checkQuizSlide(57)">Check Answer</button>
+      <div class="quiz-feedback-msg"></div>
+    </div>
+  </div>
+
+  <div class="slide slide-quiz" data-slide="58" data-quiz="quiz567" data-q="3" data-correct="1">
+    <div class="slide-inner">
+      <div class="quiz-label">Quiz — Modules 5–7</div>
+      <h2>How does the robot know the container is fully unloaded?</h2>
+      <div class="quiz-options">
+        <label class="quiz-opt"><input type="radio" name="s58" value="0"> Operator clicks "Complete" in UI</label>
+        <label class="quiz-opt"><input type="radio" name="s58" value="1"> Robot auto-detects no more boxes</label>
+        <label class="quiz-opt"><input type="radio" name="s58" value="2"> A timer runs out</label>
+      </div>
+      <button class="quiz-check-btn" disabled onclick="checkQuizSlide(58)">Check Answer</button>
+      <div class="quiz-feedback-msg"></div>
+    </div>
+  </div>
+
+  <div class="slide slide-quiz" data-slide="59" data-quiz="quiz567" data-q="4" data-correct="2">
+    <div class="slide-inner">
+      <div class="quiz-label">Quiz — Modules 5–7</div>
+      <h2>After pressing E-Stop due to an incident, what should you do next?</h2>
+      <div class="quiz-options">
+        <label class="quiz-opt"><input type="radio" name="s59" value="0"> Immediately reset the robot</label>
+        <label class="quiz-opt"><input type="radio" name="s59" value="1"> Drive the robot to storage</label>
+        <label class="quiz-opt"><input type="radio" name="s59" value="2"> Fill out the Incident Report in the UI</label>
+      </div>
+      <button class="quiz-check-btn" disabled onclick="checkQuizSlide(59)">Check Answer</button>
+      <div class="quiz-feedback-msg"></div>
+    </div>
+  </div>
+
+  <!-- ═══════ LIVE EXERCISE III ═══════ -->
+
+  <div class="slide slide-exercise" data-slide="60">
+    <div class="slide-inner">
+      <div class="exercise-icon">&#9881;</div>
+      <h2>Live Exercise III: Operate the Duck</h2>
+      <p>Complete the full operation workflow under instructor supervision: setup, assign container, start unloading, monitor, handle scenarios, and teardown.</p>
+    </div>
+  </div>
+
+  <!-- ═══════ COMPLETION ═══════ -->
+
+  <div class="slide slide-completion" data-slide="61">
+    <div class="slide-inner">
+      <div class="trophy">&#127942;</div>
+      <h2>Training Complete!</h2>
+      <table class="results-table" id="resultsTable">
+        <tr><th>Quiz</th><th>Score</th><th>Pass?</th></tr>
+      </table>
+      <div class="overall-result" id="overallResult"></div>
+      <div class="completion-actions">
+        <a href="index.html">Back to Overview</a>
+        <button onclick="retakeTraining()">Retake Training</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── Bottom Bar ── -->
+<div class="bottom-bar">
+  <div class="bar-left">
+    <a href="index.html" class="bar-home">&#8592; Overview</a>
+  </div>
+  <div class="bar-center">
+    <button class="nav-btn" id="prevBtn" onclick="prevSlide()">&#8592; Prev</button>
+    <div class="bar-progress-track"><div class="bar-progress-fill" id="barProgress"></div></div>
+    <span class="slide-counter" id="slideCounter">1 / 61</span>
+    <button class="nav-btn primary" id="nextBtn" onclick="nextSlide()">Next &#8594;</button>
+  </div>
+  <div class="bar-right"></div>
+</div>
+
+<script src="js/training.js"></script>
+</body>
+</html>

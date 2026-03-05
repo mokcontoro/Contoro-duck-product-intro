@@ -183,6 +183,24 @@ body {
   position: relative;
 }
 
+.hero .hero-cta {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 36px;
+  background: var(--blue);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: opacity 0.2s;
+  position: relative;
+}
+
+.hero .hero-cta:hover {
+  opacity: 0.9;
+}
+
 .hero .hero-badge {
   display: inline-block;
   background: var(--blue);
