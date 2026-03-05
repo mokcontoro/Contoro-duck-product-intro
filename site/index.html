@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Duck Camp — Contoro Operator Training</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="../Contoro Training Program L1 Final (Published)/data/img0.png">
+</head>
+<body>
+
+<button class="mobile-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">&#9776;</button>
+
+<!-- ═══════════════ SIDEBAR ═══════════════ -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <img src="../Contoro Training Program L1 Final (Published)/data/img0.png" alt="Contoro Robotics">
+    <h2>Operator Training L1</h2>
+  </div>
+  <nav>
+    <a href="#hero"><span class="nav-num">&#9679;</span> Welcome</a>
+    <a href="#module1" data-module="1"><span class="nav-num">1</span> Contoro at a Glance</a>
+    <a href="#module2" data-module="2"><span class="nav-num">2</span> Duck System Architecture</a>
+    <a href="#quiz12" data-module="q12"><span class="nav-num">?</span> Quiz: Modules 1 &amp; 2</a>
+    <a href="#module3" data-module="3"><span class="nav-num">3</span> Safety &amp; Risk Awareness</a>
+    <a href="#quiz3" data-module="q3"><span class="nav-num">?</span> Quiz: Module 3</a>
+    <a href="#exercise1" class="exercise">&#9881; Live Exercise I</a>
+    <a href="#module4" data-module="4"><span class="nav-num">4</span> Operation Modes</a>
+    <a href="#quiz4" data-module="q4"><span class="nav-num">?</span> Quiz: Module 4</a>
+    <a href="#module5" data-module="5"><span class="nav-num">5</span> Setup &amp; Teardown</a>
+    <a href="#exercise2" class="exercise">&#9881; Live Exercise II</a>
+    <a href="#module6" data-module="6"><span class="nav-num">6</span> Cloud UI</a>
+    <a href="#module7" data-module="7"><span class="nav-num">7</span> Operating the Duck</a>
+    <a href="#quiz567" data-module="q567"><span class="nav-num">?</span> Quiz: Modules 5–7</a>
+    <a href="#exercise3" class="exercise">&#9881; Live Exercise III</a>
+    <a href="#completion">&#9733; Completion</a>
+  </nav>
+  <div class="progress-bar">
+    <label>Course Progress</label>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+</aside>
+
+<!-- ═══════════════ MAIN ═══════════════ -->
+<main class="main">
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="hero">
+    <div class="hero-badge">Level I Certification</div>
+    <h1>The <span>Duck</span> Camp</h1>
+    <p>Training Program for Level I Duck Operators. Learn to safely and effectively operate the Contoro Dock Duck — our Autonomous Trailer Unloading Robot.</p>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- MODULE 1: CONTORO AT A GLANCE             -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="module-section" id="module1">
+    <div class="module-header">
+      <div class="module-number">1</div>
+      <h2>Contoro at a Glance</h2>
+      <button class="complete-btn" data-module="1" onclick="toggleComplete(1)">Mark Complete</button>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-card">
+        <h3>Our Technology</h3>
+        <p>This is our <strong>Autonomous Trailer Unloading Robot</strong> — also known as the <strong>Dock Duck</strong>. It automates one of the most physically demanding tasks in warehouse logistics.</p>
+        <img src="../Contoro Training Program L1 Final (Published)/data/img3.jpg" alt="The Dock Duck robot" class="img-full">
+      </div>
+
+      <div class="content-card">
+        <h3>What Do We Do?</h3>
+        <p>We automate offloading floor-loaded trailers. The Duck enters the container, picks up boxes one at a time, and places them onto the conveyor system for palletization.</p>
+        <div class="two-col">
+          <img src="../Contoro Training Program L1 Final (Published)/data/img4.jpg" alt="Duck picking up a box" class="img-full">
+          <img src="../Contoro Training Program L1 Final (Published)/data/img5.jpg" alt="Duck unloading boxes" class="img-full">
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="content-card">
+          <h3>Why This Matters</h3>
+          <p>Reduces risk of injury for associates and allows them to work on safer tasks.</p>
+          <img src="../Contoro Training Program L1 Final (Published)/data/img6.jpg" alt="Worker lifting heavy box" class="img-full">
+        </div>
+        <div class="content-card">
+          <h3>Why This Matters</h3>
+          <p>Keeps associates inside of the warehouse and out of extremely hot or cold containers.</p>
+          <img src="../Contoro Training Program L1 Final (Published)/data/img7.jpg" alt="Hot and cold containers" class="img-full">
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h3>What Does Automated Trailer Unloading Look Like?</h3>
+        <div class="video-container">
+          <video controls preload="metadata">
+            <source src="../Contoro Training Program L1 Final (Published)/data/video1.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="content-card">
+          <h3>Operating Limits</h3>
+          <img src="../Contoro Training Program L1 Final (Published)/data/img9.jpg" alt="Operating limits - box size and weight" class="img-full">
+          <table class="spec-table" style="margin-top:16px">
+            <tr><th>Parameter</th><th>Specification</th></tr>
+            <tr><td>Box Size (each side)</td><td>8 in — 30 in</td></tr>
+            <tr><td>Box Weight</td><td>&le; 65 lb</td></tr>
+          </table>
+        </div>
+        <div class="content-card">
+          <h3>Trailers &amp; Containers</h3>
+          <p><strong>In Scope:</strong> Floor-loaded trailers with standard cardboard boxes stacked inside.</p>
+          <p><strong>Out of Scope:</strong> Palletized loads, covered sheets, boxes under 8".</p>
+          <div class="two-col">
+            <div>
+              <p style="font-weight:600;color:var(--red);text-align:center;margin-bottom:8px;">Out of Scope</p>
+              <img src="../Contoro Training Program L1 Final (Published)/data/img10.png" alt="Out of scope containers" class="img-full">
+            </div>
+            <div>
+              <p style="font-weight:600;color:var(--green);text-align:center;margin-bottom:8px;">In Scope</p>
+              <img src="../Contoro Training Program L1 Final (Published)/data/img11.png" alt="In scope containers" class="img-full">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- MODULE 2: DUCK SYSTEM ARCHITECTURE         -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="module-section" id="module2">
+    <div class="module-header">
+      <div class="module-number">2</div>
+      <h2>Duck System Architecture</h2>
+      <button class="complete-btn" data-module="2" onclick="toggleComplete(2)">Mark Complete</button>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-card">
+        <h3>System Components Overview</h3>
+        <p>The Duck system consists of several key components that work together: the Duck robot itself, a safety fence, a safety cart, conveyors, a ramp, and the container at the dock.</p>
+        <img src="../Contoro Training Program L1 Final (Published)/data/img13.png" alt="System architecture - dock" class="img-full">
+      </div>
+
+      <div class="three-col">
+        <div class="content-card">
+          <h3>Duck / Unloading Robot</h3>
+          <p>The core robot system with KUKA robotic arm, gripper, conveyors, and drive system — all on a mobile platform.</p>
+          <img src="../Contoro Training Program L1 Final (Published)/data/img14.png" alt="Duck robot at dock" class="img-full">
+        </div>
+        <div class="content-card">
+          <h3>Safety Fence</h3>
+          <p>Interlock safety fence surrounds the operating area to prevent unauthorized access during operation.</p>
+          <img src="../Contoro Training Program L1 Final (Published)/data/img15.png" alt="Safety fence" class="img-full">
+        </div>
+        <div class="content-card">
+          <h3>Safety Cart</h3>
+          <p>The operator's control station with monitors, E-stop, start button, and laptop for the Cloud UI.</p>
+          <img src="../Contoro Training Program L1 Final (Published)/data/img16.png" alt="Safety cart with fence" class="img-full">
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h3>Real-Life Unloading Scene</h3>
+        <p>See the full system in action at a warehouse dock — including the Duck, conveyors, safety cart, and palletizer.</p>
+        <img src="../Contoro Training Program L1 Final (Published)/data/img20.jpg" alt="Real life unloading scene" class="img-full">
+        <div class="video-container">
+          <video controls preload="metadata">
+            <source src="../Contoro Training Program L1 Final (Published)/data/video2.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h3>How Does the Box Move from Arm to Pallet?</h3>
+        <p>After the gripper picks up a box from the container wall:</p>
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Flat Conveyor</h4>
+            <p>Box lands on the flat conveyor built into the Duck</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Sloped Conveyor</h4>
+            <p>Box moves to the sloped (powered) conveyor</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Flex Conveyor</h4>
+            <p>Box moves to the flex (skate) conveyor to finally get palletized</p>
+          </div>
+        </div>
+        <div class="video-container">
+          <video controls preload="metadata">
+            <source src="../Contoro Training Program L1 Final (Published)/data/video3.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="content-card">
+          <h3>Gripper / End Effector</h3>
+          <p>The gripper uses suction cups to pick up boxes from the container wall. It adapts to different box sizes and positions.</p>
+          <div class="video-container">
+            <video controls preload="metadata">
+              <source src="../Contoro Training Program L1 Final (Published)/data/video4.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="content-card">
+          <h3>KUKA Robotic Arm</h3>
+          <p>A powerful industrial KUKA robotic arm provides the reach and force needed to grab boxes from anywhere inside the container.</p>
+          <img src="../Contoro Training Program L1 Final (Published)/data/img28.png" alt="KUKA robotic arm" class="img-full">
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h3>Flex (Skate) Conveyor</h3>
+        <p>The expandable skate conveyor extends from the Duck to the palletization area, transporting boxes out of the container.</p>
+        <img src="../Contoro Training Program L1 Final (Published)/data/img25.png" alt="Flex conveyor" class="img-medium">
+      </div>
+    </div>
+  </section>
+
+  <!-- ── QUIZ: MODULES 1 & 2 ── -->
+  <section class="module-section" id="quiz12">
+    <div class="module-header">
+      <div class="module-number" style="background:var(--blue);">?</div>
+      <h2>Knowledge Check — Modules 1 &amp; 2</h2>
+    </div>
+    <div class="quiz-section" data-quiz="quiz12">
+      <h3>Test your understanding of the Duck system</h3>
+
+      <div class="quiz-question" data-correct="1">
+        <p><span class="q-num">Q1.</span> Can we unload a box with dimensions: 4" x 20" x 15"?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q12_1" value="0"> Yes</label>
+          <label class="quiz-option"><input type="radio" name="q12_1" value="1"> No</label>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="1">
+        <p><span class="q-num">Q2.</span> What is the maximum box weight the Duck can handle?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q12_2" value="0"> 45 lb</label>
+          <label class="quiz-option"><input type="radio" name="q12_2" value="1"> 65 lb</label>
+          <label class="quiz-option"><input type="radio" name="q12_2" value="2"> 85 lb</label>
+          <label class="quiz-option"><input type="radio" name="q12_2" value="3"> 100 lb</label>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="2">
+        <p><span class="q-num">Q3.</span> Which type of container is OUT of scope for the Duck?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q12_3" value="0"> Floor-loaded trailer with cardboard boxes</label>
+          <label class="quiz-option"><input type="radio" name="q12_3" value="1"> Standard shipping container with stacked boxes</label>
+          <label class="quiz-option"><input type="radio" name="q12_3" value="2"> Palletized load</label>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="2">
+        <p><span class="q-num">Q4.</span> What is the correct order of box movement after the arm picks it up?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q12_4" value="0"> Flex Conveyor &rarr; Sloped Conveyor &rarr; Flat Conveyor</label>
+          <label class="quiz-option"><input type="radio" name="q12_4" value="1"> Sloped Conveyor &rarr; Flat Conveyor &rarr; Palletizer</label>
+          <label class="quiz-option"><input type="radio" name="q12_4" value="2"> Flat Conveyor &rarr; Sloped Conveyor &rarr; Flex Conveyor &rarr; Palletizer</label>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <button class="quiz-submit" onclick="gradeQuiz('quiz12')">Submit Answers</button>
+      <div class="quiz-result" id="result-quiz12"></div>
+    </div>
+  </section>
+
+  <!-- ── CHECKPOINT ── -->
+  <div class="checkpoint">
+    <h3>Checkpoint</h3>
+    <p>You've completed Modules 1 &amp; 2 — you now understand what the Duck does and how the system is built.</p>
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- MODULE 3: SAFETY & RISK AWARENESS          -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="module-section" id="module3">
+    <div class="module-header">
+      <div class="module-number">3</div>
+      <h2>Safety &amp; Risk Awareness</h2>
+      <button class="complete-btn" data-module="3" onclick="toggleComplete(3)">Mark Complete</button>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-card safety-warning">
+        <h3>Why Safety Matters</h3>
+        <p>The Duck system includes powerful industrial equipment. Key safety concerns:</p>
+        <ol>
+          <li><strong>High Voltage</strong> — The system operates at 480V which can be fatal</li>
+          <li><strong>Heavy Moving Parts</strong> — Conveyors and drive mechanisms can cause crush injuries</li>
+          <li><strong>Powerful Robotic Arm</strong> — The KUKA arm can move suddenly and with great force</li>
+        </ol>
+        <img src="../Contoro Training Program L1 Final (Published)/data/img36.png" alt="Safety First" class="img-medium">
+      </div>
+
+      <div class="content-card important-note">
+        <h3>Only Trained &amp; Authorized Operators</h3>
+        <p>Only trained and authorized individuals may operate the robot. This training course is a mandatory requirement before you can operate the Duck.</p>
+      </div>
+
+      <div class="content-card">
+        <h3>Things to Pay Attention To</h3>
+        <ol>
+          <li><strong>Status Indicator Light</strong> — Always check the light color before approaching</li>
+          <li><strong>KUKA Robotic Arm</strong> — Can move suddenly with force</li>
+          <li><strong>High Voltage</strong> — Never open electrical panels</li>
+          <li><strong>Warehouse Machinery</strong> — Be aware of forklifts and other equipment</li>
+          <li><strong>Robot Emergency Stops</strong> — Know where all 6 E-stops are located</li>
+        </ol>
+      </div>
+
+      <div class="content-card">
+        <h3>The Status Indicator Light</h3>
+        <p>The status indicator light on the Duck tells you the current state of the robot. Always check it before approaching.</p>
+        <img src="../Contoro Training Program L1 Final (Published)/data/img39.png" alt="Status indicator light" class="img-medium">
+        <div class="video-container">
+          <video controls preload="metadata">
+            <source src="../Contoro Training Program L1 Final (Published)/data/video5.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="content-card safety-warning">
+          <h3>KUKA Robotic Arm Safety</h3>
+          <ul>
+            <li>Can move suddenly with force</li>
+            <li>Standing next to a live robot exposes you to impact risk</li>
+            <li>A collision can cause serious body injury</li>
+          </ul>
+          <img src="../Contoro Training Program L1 Final (Published)/data/img46.png" alt="KUKA arm" class="img-medium">
+        </div>
+        <div class="content-card safety-warning">
+          <h3>High Voltage</h3>
+          <ul>
+            <li>480V can be fatal</li>
+            <li>Do not open panels</li>
+            <li>Do not touch exposed wires</li>
+            <li>Escalate immediately if you see damage</li>
+          </ul>
+          <img src="../Contoro Training Program L1 Final (Published)/data/img49.png" alt="High voltage danger sign" class="img-medium">
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h3>The 6 E-Stops</h3>
+        <p>There are 6 emergency stop buttons located around the Duck system. Know where they all are — in an emergency, press the nearest one immediately.</p>
+        <img src="../Contoro Training Program L1 Final (Published)/data/img50.png" alt="E-stop locations on the Duck" class="img-medium">
+      </div>
+
+      <div class="content-card">
+        <h3>Container Unloading Situations</h3>
+        <p>Be prepared for these potential incidents during unloading:</p>
+        <ol>
+          <li><strong>Robot Arm crashes into the wall</strong> — Press E-Stop immediately</li>
+          <li><strong>Robot stops unloading / Gets stuck</strong> — Report via UI, contact Contoro staff</li>
+          <li><strong>Someone entering the container</strong> — Press E-Stop immediately. No one should enter while robot is active</li>
+          <li><strong>Unexpected movement</strong> — Press E-Stop immediately</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── QUIZ: MODULE 3 ── -->
+  <section class="module-section" id="quiz3">
+    <div class="module-header">
+      <div class="module-number" style="background:var(--blue);">?</div>
+      <h2>Knowledge Check — Safety</h2>
+    </div>
+    <div class="quiz-section" data-quiz="quiz3">
+      <h3>Test your safety knowledge</h3>
+
+      <div class="quiz-question" data-correct="2">
+        <p><span class="q-num">Q1.</span> During unloading, the robot crashes into the wall. What is the first thing you would do?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q3_1" value="0"> Notify Contoro Staff</label>
+          <label class="quiz-option"><input type="radio" name="q3_1" value="1"> Inspect Gripper State</label>
+          <label class="quiz-option"><input type="radio" name="q3_1" value="2"> Press E-Stop</label>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="2">
+        <p><span class="q-num">Q2.</span> What does Red Mode indicate?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q3_2" value="0"> Robot is requesting reset</label>
+          <label class="quiz-option"><input type="radio" name="q3_2" value="1"> Robot is ready to unload</label>
+          <label class="quiz-option"><input type="radio" name="q3_2" value="2"> E-stop is engaged and safe to approach the robot</label>
+          <label class="quiz-option"><input type="radio" name="q3_2" value="3"> Robot is in manual mode</label>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="0">
+        <p><span class="q-num">Q3.</span> How many E-Stop buttons are there on the Duck system?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q3_3" value="0"> 6</label>
+          <label class="quiz-option"><input type="radio" name="q3_3" value="1"> 4</label>
+          <label class="quiz-option"><input type="radio" name="q3_3" value="2"> 2</label>
+          <label class="quiz-option"><input type="radio" name="q3_3" value="3"> 8</label>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="1">
+        <p><span class="q-num">Q4.</span> What voltage does the Duck system operate at?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q3_4" value="0"> 240V</label>
+          <label class="quiz-option"><input type="radio" name="q3_4" value="1"> 480V</label>
+          <label class="quiz-option"><input type="radio" name="q3_4" value="2"> 120V</label>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <button class="quiz-submit" onclick="gradeQuiz('quiz3')">Submit Answers</button>
+      <div class="quiz-result" id="result-quiz3"></div>
+    </div>
+  </section>
+
+  <!-- ── LIVE EXERCISE I ── -->
+  <section id="exercise1">
+    <div class="exercise-callout">
+      <div class="exercise-icon">&#9881;</div>
+      <h3>Live Exercise I: Meet the Duck!</h3>
+      <p>Time for a hands-on introduction. Your instructor will walk you through the physical Duck system, point out all safety features, E-stops, and components you've learned about.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- MODULE 4: OPERATION MODES & BEHAVIORS      -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="module-section" id="module4">
+    <div class="module-header">
+      <div class="module-number">4</div>
+      <h2>Operation Modes &amp; Behaviors</h2>
+      <button class="complete-btn" data-module="4" onclick="toggleComplete(4)">Mark Complete</button>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-card">
+        <h3>Robot Status Modes</h3>
+        <p>The Duck has four operating states, indicated by the Status Indicator Light color:</p>
+      </div>
+
+      <div class="two-col">
+        <div class="status-card status-red">
+          <h4>Red Mode = E-Stop</h4>
+          <ul>
+            <li>Robot cannot move</li>
+            <li>It IS safe to approach the robot</li>
+            <li>E-Stop is engaged</li>
+          </ul>
+        </div>
+        <div class="status-card status-blue">
+          <h4>Blue Mode = Reset</h4>
+          <ul>
+            <li>Robot is requesting reset</li>
+            <li>System cannot move</li>
+            <li>Can change to Green/Yellow if reset button is pressed</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="status-card status-yellow">
+          <h4>Yellow Mode = Manual</h4>
+          <ul>
+            <li>Robot is drivable with Xbox Controller</li>
+            <li>KUKA arm can be moved manually</li>
+            <li>Safety Cart cannot control robot</li>
+          </ul>
+        </div>
+        <div class="status-card status-green">
+          <h4>Green Mode = Ready / Active</h4>
+          <ul>
+            <li>It is NOT safe to approach the robot</li>
+            <li>Robot arm is able to move</li>
+            <li>Robot is ready to unload</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h3>Manual Driving</h3>
+        <p>In Yellow (Manual) mode, the Duck can be driven using an Xbox Controller. This is used to move the Duck from storage to the container and back.</p>
+        <div class="two-col">
+          <div>
+            <img src="../Contoro Training Program L1 Final (Published)/data/img63.png" alt="Xbox controller" class="img-medium">
+            <p style="text-align:center;margin-top:8px;"><strong>Xbox Controller</strong> — Used in Yellow State (Manual)</p>
+          </div>
+          <div class="video-container">
+            <video controls preload="metadata">
+              <source src="../Contoro Training Program L1 Final (Published)/data/video7.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── QUIZ: MODULE 4 ── -->
+  <section class="module-section" id="quiz4">
+    <div class="module-header">
+      <div class="module-number" style="background:var(--blue);">?</div>
+      <h2>Knowledge Check — Operation Modes</h2>
+    </div>
+    <div class="quiz-section" data-quiz="quiz4">
+      <h3>Test your knowledge of robot states</h3>
+
+      <div class="quiz-question" data-correct="3">
+        <p><span class="q-num">Q1.</span> Manual driving is used to:</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q4_1" value="0"> Change speed settings</label>
+          <label class="quiz-option"><input type="radio" name="q4_1" value="1"> Automatically unload boxes</label>
+          <label class="quiz-option"><input type="radio" name="q4_1" value="2"> Reset system faults</label>
+          <label class="quiz-option"><input type="radio" name="q4_1" value="3"> Move the Duck from storage to the container</label>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="1">
+        <p><span class="q-num">Q2.</span> In which mode is it safe to approach the robot?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q4_2" value="0"> Green Mode</label>
+          <label class="quiz-option"><input type="radio" name="q4_2" value="1"> Red Mode</label>
+          <label class="quiz-option"><input type="radio" name="q4_2" value="2"> Blue Mode</label>
+          <label class="quiz-option"><input type="radio" name="q4_2" value="3"> Yellow Mode</label>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="2">
+        <p><span class="q-num">Q3.</span> What does Green Mode mean?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q4_3" value="0"> E-Stop is engaged</label>
+          <label class="quiz-option"><input type="radio" name="q4_3" value="1"> Robot is in manual mode</label>
+          <label class="quiz-option"><input type="radio" name="q4_3" value="2"> Robot is ready/active — NOT safe to approach</label>
+          <label class="quiz-option"><input type="radio" name="q4_3" value="3"> Robot is requesting reset</label>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <button class="quiz-submit" onclick="gradeQuiz('quiz4')">Submit Answers</button>
+      <div class="quiz-result" id="result-quiz4"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- MODULE 5: SETUP & TEARDOWN                 -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="module-section" id="module5">
+    <div class="module-header">
+      <div class="module-number">5</div>
+      <h2>Setup &amp; Teardown</h2>
+      <button class="complete-btn" data-module="5" onclick="toggleComplete(5)">Mark Complete</button>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-card">
+        <h3>Setup Procedure</h3>
+        <p>Before unloading, you must set up the following components in order:</p>
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>Safety Cart</h4>
+            <p>Position the safety cart at the designated operator station with clear view of the dock</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>Robot / Duck</h4>
+            <p>Drive the Duck (in Yellow/Manual mode) to the container opening using the Xbox controller</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Conveyors</h4>
+            <p>Set up and connect the powered and flex conveyors from the Duck to the palletization area</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>Safety Fence</h4>
+            <p>Deploy the safety fence around the operating area and ensure all interlocks are engaged</p>
+          </div>
+        </div>
+        <div class="video-container">
+          <video controls preload="metadata">
+            <source src="../Contoro Training Program L1 Final (Published)/data/video6.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h3>Teardown Procedure</h3>
+        <p>After the container is fully unloaded, tear down in reverse order:</p>
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content"><h4>Safety Fence</h4><p>Retract and stow the safety fence</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content"><h4>Conveyors</h4><p>Disconnect and collapse the conveyors</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content"><h4>Robot / Duck</h4><p>Drive the Duck back to storage (Yellow/Manual mode)</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content"><h4>Safety Cart</h4><p>Return the safety cart to its storage position</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LIVE EXERCISE II ── -->
+  <section id="exercise2">
+    <div class="exercise-callout">
+      <div class="exercise-icon">&#9881;</div>
+      <h3>Live Exercise II: Practice Setup &amp; Teardown!</h3>
+      <p>Practice the full setup and teardown procedure with your instructor. You'll physically position all components and verify safety interlocks.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- MODULE 6: CLOUD UI                         -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="module-section" id="module6">
+    <div class="module-header">
+      <div class="module-number">6</div>
+      <h2>Operator User Interface (Cloud UI)</h2>
+      <button class="complete-btn" data-module="6" onclick="toggleComplete(6)">Mark Complete</button>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-card">
+        <h3>UI Overview</h3>
+        <p>The Cloud UI is your primary interface for monitoring and controlling the Duck during operation. It runs in a web browser on the Safety Cart laptop.</p>
+        <img src="../Contoro Training Program L1 Final (Published)/data/img66.png" alt="Cloud UI overview" class="img-full">
+      </div>
+
+      <div class="content-card">
+        <h3>UI Tabs</h3>
+        <p>The interface has five main tabs:</p>
+        <table class="spec-table">
+          <tr><th>Tab</th><th>Purpose</th></tr>
+          <tr><td><strong>Controls</strong></td><td>Configure unloading settings — robot speed, box drop-off height, and start/pause unloading</td></tr>
+          <tr><td><strong>Health</strong></td><td>Monitor hardware, software, sensors, and robot arm messages</td></tr>
+          <tr><td><strong>Portal</strong></td><td>3D visualization of the robot and container — see what the robot "sees"</td></tr>
+          <tr><td><strong>Incidents</strong></td><td>Report and review incidents during operation</td></tr>
+          <tr><td><strong>Maintenance</strong></td><td>System maintenance information</td></tr>
+        </table>
+      </div>
+
+      <div class="two-col">
+        <div class="content-card">
+          <h3>Controls Tab</h3>
+          <p>From the Controls tab you can:</p>
+          <ul>
+            <li>Assign a container/facility</li>
+            <li>Set robot speed (5%–100%)</li>
+            <li>Set box drop-off height (10cm–25cm)</li>
+            <li>Start and pause unloading</li>
+          </ul>
+          <img src="../Contoro Training Program L1 Final (Published)/data/img70.png" alt="Controls tab with incident form" class="img-full">
+        </div>
+        <div class="content-card">
+          <h3>Health Tab</h3>
+          <p>Monitor system health including:</p>
+          <ul>
+            <li>Hardware: CPU, GPU, memory usage</li>
+            <li>Sensors: cameras, lidars status</li>
+            <li>Software versions and updates</li>
+            <li>Robot arm messages and warnings</li>
+          </ul>
+          <img src="../Contoro Training Program L1 Final (Published)/data/img67.png" alt="Health tab" class="img-full">
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="content-card">
+          <h3>Portal Tab</h3>
+          <p>3D visualization showing the robot and container in real-time. See the box wall, robot position, and current operation.</p>
+          <img src="../Contoro Training Program L1 Final (Published)/data/img68.png" alt="Portal 3D view" class="img-full">
+        </div>
+        <div class="content-card">
+          <h3>Video Footage</h3>
+          <p>Live camera feeds from the Duck's onboard cameras, letting you see what's happening inside the container.</p>
+          <img src="../Contoro Training Program L1 Final (Published)/data/img69.png" alt="Portal active unloading view" class="img-full">
+        </div>
+      </div>
+
+      <div class="content-card">
+        <h3>Incident Reporting</h3>
+        <p>If an incident occurs during operation, use the Incident Report form in the UI:</p>
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content"><h4>Choose Tag</h4><p>Select the type of incident or event</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content"><h4>Add Notes</h4><p>Write a few notes to describe the event</p></div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content"><h4>Click Report</h4><p>Submit the incident report</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- MODULE 7: OPERATING THE DUCK               -->
+  <!-- ══════════════════════════════════════════ -->
+  <section class="module-section" id="module7">
+    <div class="module-header">
+      <div class="module-number">7</div>
+      <h2>Operating the Duck</h2>
+      <button class="complete-btn" data-module="7" onclick="toggleComplete(7)">Mark Complete</button>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-card">
+        <h3>Full Operation Workflow</h3>
+        <p>Follow these steps for a complete unloading operation:</p>
+
+        <div class="step">
+          <div class="step-num">I</div>
+          <div class="step-content">
+            <h4>Setup</h4>
+            <p>Position Safety Cart, drive Duck to container, set up conveyors, deploy safety fence (as covered in Module 5)</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">II</div>
+          <div class="step-content">
+            <h4>Assign Container in UI</h4>
+            <p>Step 1: Choose the Facility (e.g., "States Logistics 543 Dolly")<br>Step 2: Choose Container ID (e.g., "MSDU73378779")<br>You can start unloading from the UI once assigned</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">III</div>
+          <div class="step-content">
+            <h4>Start the Robot</h4>
+            <p>Click the Green Start Button on the Safety Cart. The robot will begin unloading automatically.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">IV</div>
+          <div class="step-content">
+            <h4>During Unloading — Monitor &amp; Respond</h4>
+            <p>
+              <strong>Pause:</strong> You can stop the robot at any time from the UI<br>
+              <strong>Reset:</strong> If robot enters Blue State, press Reset on the Safety Cart<br>
+              <strong>E-Stop:</strong> Press immediately for: crashes, incidents, or anyone entering the container
+            </p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">V</div>
+          <div class="step-content">
+            <h4>Unloading Finished</h4>
+            <p>The robot will automatically detect when the container is empty and stop. The UI will show completion status.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">VI</div>
+          <div class="step-content">
+            <h4>Teardown</h4>
+            <p>Reverse the setup procedure: retract fence, collapse conveyors, drive Duck to storage, return safety cart</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-card safety-warning">
+        <h3>When to Press E-Stop During Unloading</h3>
+        <ol>
+          <li><strong>Crash</strong> — Robot arm crashes into container wall or structure</li>
+          <li><strong>Incident</strong> — Any unexpected behavior or equipment malfunction</li>
+          <li><strong>Entering the container</strong> — If anyone enters or attempts to enter the container while the robot is active</li>
+        </ol>
+        <p style="margin-top:16px;"><strong>After pressing E-Stop:</strong> Fill out the Incident Report form in the UI (choose tag, add notes, click Report).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── QUIZ: MODULES 5-7 ── -->
+  <section class="module-section" id="quiz567">
+    <div class="module-header">
+      <div class="module-number" style="background:var(--blue);">?</div>
+      <h2>Knowledge Check — Modules 5–7</h2>
+    </div>
+    <div class="quiz-section" data-quiz="quiz567">
+      <h3>Test your operational knowledge</h3>
+
+      <div class="quiz-question" data-correct="1">
+        <p><span class="q-num">Q1.</span> What is the first component to set up before unloading?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q567_1" value="0"> Safety Fence</label>
+          <label class="quiz-option"><input type="radio" name="q567_1" value="1"> Safety Cart</label>
+          <label class="quiz-option"><input type="radio" name="q567_1" value="2"> Conveyors</label>
+          <label class="quiz-option"><input type="radio" name="q567_1" value="3"> Duck Robot</label>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="0">
+        <p><span class="q-num">Q2.</span> After assigning a container in the UI, how do you start the robot?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q567_2" value="0"> Click the Green Start Button on the Safety Cart</label>
+          <label class="quiz-option"><input type="radio" name="q567_2" value="1"> Press Start on the Xbox Controller</label>
+          <label class="quiz-option"><input type="radio" name="q567_2" value="2"> The robot starts automatically</label>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="2">
+        <p><span class="q-num">Q3.</span> When the robot enters Blue State during unloading, what should you do?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q567_3" value="0"> Press E-Stop</label>
+          <label class="quiz-option"><input type="radio" name="q567_3" value="1"> Restart the UI</label>
+          <label class="quiz-option"><input type="radio" name="q567_3" value="2"> Press the Reset button on the Safety Cart</label>
+          <label class="quiz-option"><input type="radio" name="q567_3" value="3"> Drive the robot out of the container</label>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="1">
+        <p><span class="q-num">Q4.</span> How does the robot know the container is fully unloaded?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q567_4" value="0"> The operator clicks "Complete" in the UI</label>
+          <label class="quiz-option"><input type="radio" name="q567_4" value="1"> The robot automatically detects no more boxes</label>
+          <label class="quiz-option"><input type="radio" name="q567_4" value="2"> A timer runs out</label>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <div class="quiz-question" data-correct="2">
+        <p><span class="q-num">Q5.</span> After pressing E-Stop due to an incident, what should you do next?</p>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q567_5" value="0"> Immediately reset the robot</label>
+          <label class="quiz-option"><input type="radio" name="q567_5" value="1"> Drive the robot to storage</label>
+          <label class="quiz-option"><input type="radio" name="q567_5" value="2"> Fill out the Incident Report form in the UI</label>
+        </div>
+        <div class="quiz-feedback"></div>
+      </div>
+
+      <button class="quiz-submit" onclick="gradeQuiz('quiz567')">Submit Answers</button>
+      <div class="quiz-result" id="result-quiz567"></div>
+    </div>
+  </section>
+
+  <!-- ── LIVE EXERCISE III ── -->
+  <section id="exercise3">
+    <div class="exercise-callout">
+      <div class="exercise-icon">&#9881;</div>
+      <h3>Live Exercise III: Practice Operating the Duck</h3>
+      <p>Complete the full operation workflow under instructor supervision: setup, assign container, start unloading, monitor operation, handle scenarios, and teardown.</p>
+    </div>
+  </section>
+
+  <!-- ── COMPLETION ── -->
+  <section class="completion-section" id="completion">
+    <div class="completion-icon">&#127942;</div>
+    <h2>Congratulations!</h2>
+    <p>You've successfully completed your Level I Training Course: Basic Operator. You are now prepared to operate the Contoro Dock Duck under supervision.</p>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
