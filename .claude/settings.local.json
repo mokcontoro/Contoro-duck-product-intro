@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh api:*)",
+      "Bash(mv Contoro Training Program L1 Final \\(Published\\):*)",
+      "Bash(ls:*)"
+    ]
+  }
+}
