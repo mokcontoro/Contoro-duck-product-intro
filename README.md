@@ -8,13 +8,13 @@ Interactive training website for Level I Duck Operators at Contoro Robotics. Cov
 Scrollable reference page with sidebar navigation covering all 7 modules, embedded videos, and images. Use this to browse training content at a glance.
 
 ### Training (`training.html`)
-Fullscreen, slide-based training experience (61 slides). Progresses through all modules in order with quizzes embedded at key checkpoints. Tracks quiz performance and displays results on a completion slide.
+Fullscreen, slide-based training experience (62 slides). Progresses through all modules in order with quizzes embedded at key checkpoints. Tracks quiz performance and displays results on a completion slide.
 
 ## Modules
 
 | # | Module | Topics |
 |---|--------|--------|
-| 1 | Contoro at a Glance | What the Duck does, capabilities, operating limits |
+| 1 | Contoro at a Glance | What the Duck does, capabilities, operating limits, site requirements |
 | 2 | Duck System Architecture | Components, conveyors, gripper, KUKA arm |
 | 3 | Safety & Risk Awareness | High voltage, E-stops, status lights, incident response |
 | 4 | Operation Modes & Behaviors | Red/Blue/Yellow/Green states, manual driving |
