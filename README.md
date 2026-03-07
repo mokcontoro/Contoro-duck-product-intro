@@ -1,66 +1,51 @@
-# Contoro Operator Training — Level I
+# Contoro Duck — Product Introduction
 
-Interactive training website for Level I Duck Operators at Contoro Robotics. Covers safe operation of the Dock Duck, our Autonomous Trailer Unloading Robot.
+Slide-based product introduction for the Contoro Dock Duck, an Autonomous Trailer Unloading Robot. Designed for investors and customers.
 
-## Pages
+## Viewing
 
-### Overview (`index.html`)
-Scrollable reference page with sidebar navigation covering all 7 modules, embedded videos, and images. Use this to browse training content at a glance.
+Open `training.html` in a browser, or serve locally:
 
-### Training (`training.html`)
-Fullscreen, slide-based training experience (62 slides). Progresses through all modules in order with quizzes embedded at key checkpoints. Tracks quiz performance and displays results on a completion slide.
+```bash
+python3 -m http.server 8080
+# Open http://localhost:8080
+```
 
-## Modules
+Navigate with arrow keys, spacebar, or the on-screen buttons.
 
-| # | Module | Topics |
-|---|--------|--------|
-| 1 | Contoro at a Glance | What the Duck does, capabilities, operating limits, site requirements |
-| 2 | Duck System Architecture | Components, conveyors, gripper, KUKA arm |
-| 3 | Safety & Risk Awareness | High voltage, E-stops, status lights, incident response |
-| 4 | Operation Modes & Behaviors | Red/Blue/Yellow/Green states, manual driving |
-| 5 | Setup & Teardown | Step-by-step setup and teardown procedures |
-| 6 | Cloud UI | Controls, Health, Portal, Incidents, Maintenance tabs |
-| 7 | Operating the Duck | Full operation workflow from setup to teardown |
+## What's Covered
 
-Plus **3 live exercises** and **4 quizzes** (16 questions total, 80% to pass).
+- What the Duck does and why it matters
+- Real-life unloading demos (video)
+- Operating specs and site requirements
+- Safety and reliability features
+- Operational modes and deployment workflow
+- Cloud-based control interface
 
 ## Project Structure
 
 ```
-├── index.html              # Overview page (scrollable reference)
-├── training.html           # Training page (fullscreen slide presentation)
+├── index.html              # Redirects to training.html
+├── training.html           # Slide presentation (~35 slides)
 ├── css/
-│   ├── style.css           # Overview page styles
-│   └── training.css        # Training page styles
+│   └── training.css        # Presentation styles
 ├── js/
-│   ├── script.js           # Overview page navigation
-│   └── training.js         # Slide engine, quiz logic, performance tracking
+│   └── training.js         # Slide navigation engine
 ├── assets/
-│   ├── images/             # Training images (27 files)
-│   └── videos/             # Training videos (7 mp4 files)
+│   ├── images/             # Product images
+│   └── videos/             # Demo videos
 └── README.md
-```
-
-## Running Locally
-
-No build step required — just serve the files:
-
-```bash
-python3 -m http.server 8080
-# Overview:  http://localhost:8080/index.html
-# Training:  http://localhost:8080/training.html
 ```
 
 ## Features
 
-- **Slide-based training** — fullscreen presentation with prev/next navigation and keyboard support (arrow keys, spacebar)
-- **Interactive quizzes** — must answer each question before proceeding; instant correct/incorrect feedback
-- **Performance tracking** — per-quiz scores saved to localStorage; completion slide shows results table with pass/fail per quiz and overall score
-- **Resume support** — training resumes where you left off; retake button to start fresh
-- **Embedded videos** — 7 training videos covering operations and procedures
-- **Responsive design** — works on desktop and tablet
-- **Zero dependencies** — pure HTML, CSS, and JavaScript
+- Fullscreen slide presentation with keyboard navigation
+- Embedded demo videos
+- Progress bar and slide counter
+- Resume support (picks up where you left off)
+- Responsive design — works on desktop and tablet
+- Zero dependencies — pure HTML, CSS, JavaScript
 
 ## Hosting
 
-Static site — deploy to any web server, S3 bucket, GitHub Pages, Netlify, Vercel, etc. No server-side code required.
+Static site — deploy to GitHub Pages, Netlify, Vercel, S3, or any web server.
