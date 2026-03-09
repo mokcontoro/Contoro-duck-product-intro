@@ -2,7 +2,7 @@
 
 > **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
 
-**Goal:** Transform the operator training slide deck into a product introduction presentation for investors and customers.
+**Goal:** Transform the operator training slide deck into a product introduction presentation for the Contoro Duck.
 
 **Architecture:** Edit `training.html` in place — remove excluded slides/quizzes/exercises/completion, rewrite copy. Simplify `training.js` to pure slide navigation. Replace `index.html` with redirect. Update README.
 

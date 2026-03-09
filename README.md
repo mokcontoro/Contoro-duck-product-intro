@@ -1,6 +1,6 @@
 # Contoro Duck — Product Introduction
 
-Slide-based product introduction for the Contoro Dock Duck, an Autonomous Trailer Unloading Robot. Designed for investors and customers.
+Slide-based product introduction for the Contoro Duck, an Autonomous Trailer Unloading Robot. Designed for investors and customers.
 
 ## Viewing
 
@@ -15,7 +15,7 @@ Navigate with arrow keys, spacebar, or the on-screen buttons.
 
 ## What's Covered
 
-- What the Duck does and why it matters
+- What the Contoro Duck does and why it matters
 - Real-life unloading demos (video)
 - Operating specs and site requirements
 - Safety and reliability features
