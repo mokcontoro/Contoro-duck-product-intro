@@ -16,7 +16,7 @@ function layout(title, body) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${title} — Contoro Duck</title>
-  <link rel="icon" type="image/png" href="/assets/images/contoro-logo.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/contoro-favicon.png">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: ${THEME.lightBg}; color: ${THEME.navy}; min-height: 100vh; }
@@ -201,7 +201,7 @@ function landingPage(link, baseUrl) {
   return layout(`Welcome, ${esc(link.org_name)}`, `
   <div class="center-page">
     <div class="card" style="max-width:520px; text-align:center;">
-      <img src="/assets/images/contoro-logo.png" alt="Contoro" style="width:80px; margin-bottom:1.5rem;">
+      <img src="/assets/images/contoro-logo.png" alt="Contoro" style="width:160px; margin-bottom:1.5rem;">
       <h1 style="margin-bottom:0.5rem;">Welcome, ${esc(link.org_name)}</h1>
       <p style="margin:1rem 0; font-size:1.05rem;">${esc(welcomeMsg)}</p>
       <p style="margin:1rem 0; color:${THEME.gray}; font-size:0.9rem; font-style:italic;">
