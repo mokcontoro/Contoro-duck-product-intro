@@ -1,6 +1,7 @@
 const Database = require('better-sqlite3');
 const path = require('path');
 const fs = require('fs');
+const crypto = require('crypto');
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const DB_PATH = path.join(DATA_DIR, 'links.db');
@@ -22,9 +23,17 @@ function initDb() {
       org_name    TEXT NOT NULL,
       expires_at  TEXT NOT NULL,
       created_at  TEXT NOT NULL DEFAULT (datetime('now')),
-      notes       TEXT DEFAULT ''
+      notes       TEXT DEFAULT '',
+      welcome_message TEXT DEFAULT ''
     )
   `);
+
+  // Migration: add welcome_message column if missing (SQLite has no IF NOT EXISTS for columns)
+  try {
+    db.exec(`ALTER TABLE org_links ADD COLUMN welcome_message TEXT DEFAULT ''`);
+  } catch (_) {
+    // Column already exists
+  }
 }
 
 function getAllLinks() {
@@ -35,16 +44,23 @@ function getLinkBySlug(slug) {
   return db.prepare('SELECT * FROM org_links WHERE slug = ?').get(slug);
 }
 
-function createLink({ slug, org_name, expires_at, notes }) {
-  return db.prepare(
-    'INSERT INTO org_links (slug, org_name, expires_at, notes) VALUES (?, ?, ?, ?)'
-  ).run(slug, org_name, expires_at, notes || '');
+function generateSlug(orgName) {
+  const base = orgName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, '');
+  const random = crypto.randomBytes(3).toString('hex');
+  return `${base}-${random}`;
 }
 
-function updateLink(id, { org_name, expires_at, notes }) {
+function createLink({ org_name, expires_at, notes, welcome_message }) {
+  const slug = generateSlug(org_name);
   return db.prepare(
-    'UPDATE org_links SET org_name = ?, expires_at = ?, notes = ? WHERE id = ?'
-  ).run(org_name, expires_at, notes || '', id);
+    'INSERT INTO org_links (slug, org_name, expires_at, notes, welcome_message) VALUES (?, ?, ?, ?, ?)'
+  ).run(slug, org_name, expires_at, notes || '', welcome_message || '');
+}
+
+function updateLink(id, { org_name, expires_at, notes, welcome_message }) {
+  return db.prepare(
+    'UPDATE org_links SET org_name = ?, expires_at = ?, notes = ?, welcome_message = ? WHERE id = ?'
+  ).run(org_name, expires_at, notes || '', welcome_message || '', id);
 }
 
 function deleteLink(id) {

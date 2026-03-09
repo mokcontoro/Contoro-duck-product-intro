@@ -101,11 +101,7 @@ function dashboardPage(links, error) {
 
     <div class="card">
       <h2>Create New Link</h2>
-      <form method="POST" action="/admin/links" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.8rem; align-items:end;">
-        <div class="form-group">
-          <label for="slug">Slug (URL path)</label>
-          <input type="text" id="slug" name="slug" placeholder="e.g. bosch" required pattern="[a-z0-9\\-]+" title="Lowercase letters, numbers, hyphens only">
-        </div>
+      <form method="POST" action="/admin/links" style="display:grid; grid-template-columns:1fr 1fr; gap:0.8rem; align-items:end;">
         <div class="form-group">
           <label for="org_name">Organization Name</label>
           <input type="text" id="org_name" name="org_name" placeholder="e.g. Bosch" required>
@@ -113,6 +109,10 @@ function dashboardPage(links, error) {
         <div class="form-group">
           <label for="expires_at">Expires</label>
           <input type="date" id="expires_at" name="expires_at" required>
+        </div>
+        <div class="form-group" style="grid-column:1/3;">
+          <label for="welcome_message">Welcome Message (optional)</label>
+          <textarea id="welcome_message" name="welcome_message" rows="2" placeholder="Custom welcome message (leave blank for default)"></textarea>
         </div>
         <div class="form-group" style="grid-column:1/3;">
           <label for="notes">Notes (optional)</label>
@@ -157,6 +157,10 @@ function editPage(link) {
           <input type="date" id="expires_at" name="expires_at" value="${esc(link.expires_at)}" required>
         </div>
         <div class="form-group">
+          <label for="welcome_message">Welcome Message (optional)</label>
+          <textarea id="welcome_message" name="welcome_message" rows="2" placeholder="Custom welcome message (leave blank for default)">${esc(link.welcome_message)}</textarea>
+        </div>
+        <div class="form-group">
           <label for="notes">Notes</label>
           <input type="text" id="notes" name="notes" value="${esc(link.notes)}">
         </div>
@@ -189,9 +193,33 @@ function notFoundPage() {
   </div>`);
 }
 
+function landingPage(link, baseUrl) {
+  const welcomeMsg = link.welcome_message || 'Here is your exclusive Contoro Duck product introduction.';
+  const expiryDate = new Date(link.expires_at + 'T00:00:00').toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  const shareUrl = `${baseUrl}/${link.slug}`;
+
+  return layout(`Welcome, ${esc(link.org_name)}`, `
+  <div class="center-page">
+    <div class="card" style="max-width:520px; text-align:center;">
+      <img src="/assets/images/contoro-logo.png" alt="Contoro" style="width:80px; margin-bottom:1.5rem;">
+      <h1 style="margin-bottom:0.5rem;">Welcome, ${esc(link.org_name)}</h1>
+      <p style="margin:1rem 0; font-size:1.05rem;">${esc(welcomeMsg)}</p>
+      <p style="margin:1rem 0; color:${THEME.gray}; font-size:0.9rem; font-style:italic;">
+        This link is provided exclusively for ${esc(link.org_name)}. Please do not share this outside of your organization.
+      </p>
+      <p style="margin:1rem 0; color:${THEME.gray}; font-size:0.9rem;">This link expires on <strong>${expiryDate}</strong></p>
+      <div style="margin:1.5rem 0; display:flex; align-items:center; gap:0.5rem; justify-content:center;">
+        <input type="text" value="${esc(shareUrl)}" readonly style="max-width:300px; font-size:0.85rem; background:#f5f5f5;">
+        <button onclick="navigator.clipboard.writeText('${esc(shareUrl)}').then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})" class="btn btn-primary btn-sm" style="white-space:nowrap;">Copy</button>
+      </div>
+      <a href="/${esc(link.slug)}/start" class="btn btn-primary" style="font-size:1.1rem; padding:0.7rem 2rem;">Start Presentation →</a>
+    </div>
+  </div>`);
+}
+
 function esc(str) {
   if (!str) return '';
   return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
-module.exports = { loginPage, dashboardPage, editPage, expiredPage, notFoundPage };
+module.exports = { loginPage, dashboardPage, editPage, expiredPage, notFoundPage, landingPage };

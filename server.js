@@ -56,9 +56,9 @@ app.get('/admin/logout', (req, res) => {
 });
 
 app.post('/admin/links', requireAuth, (req, res) => {
-  const { slug, org_name, expires_at, notes } = req.body;
+  const { org_name, expires_at, notes, welcome_message } = req.body;
   try {
-    createLink({ slug, org_name, expires_at, notes: notes || '' });
+    createLink({ org_name, expires_at, notes: notes || '', welcome_message: welcome_message || '' });
   } catch (err) {
     const links = getAllLinks();
     return res.send(views.dashboardPage(links, `Error: ${err.message}`));
@@ -74,9 +74,9 @@ app.get('/admin/links/:id/edit', requireAuth, (req, res) => {
 });
 
 app.post('/admin/links/:id/edit', requireAuth, (req, res) => {
-  const { org_name, expires_at, notes } = req.body;
+  const { org_name, expires_at, notes, welcome_message } = req.body;
   try {
-    updateLink(Number(req.params.id), { org_name, expires_at, notes: notes || '' });
+    updateLink(Number(req.params.id), { org_name, expires_at, notes: notes || '', welcome_message: welcome_message || '' });
   } catch (err) {
     return res.status(400).send(err.message);
   }
@@ -95,6 +95,21 @@ app.get('/', (req, res) => {
 });
 
 app.get('/:slug', (req, res) => {
+  const link = getLinkBySlug(req.params.slug);
+  if (!link) {
+    return res.status(404).send(views.notFoundPage());
+  }
+
+  const now = new Date().toISOString().slice(0, 10);
+  if (link.expires_at < now) {
+    return res.status(410).send(views.expiredPage(link.org_name));
+  }
+
+  const baseUrl = `${req.protocol}://${req.get('host')}`;
+  res.send(views.landingPage(link, baseUrl));
+});
+
+app.get('/:slug/start', (req, res) => {
   const link = getLinkBySlug(req.params.slug);
   if (!link) {
     return res.status(404).send(views.notFoundPage());
