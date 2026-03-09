@@ -1,0 +1,13 @@
+{
+  "name": "contoro-duck-product-intro",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.6.2",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0"
+  }
+}
